@@ -1,0 +1,121 @@
+{
+	"components": [
+		{
+			"type": "Page",
+			"id": "d2fe-77d5-4b03-a202",
+			"initialized": true,
+			"themeProps": {
+				"Page": "Default"
+			},
+			"userProps": {},
+			"className": ".page",
+			"version": "6.5.1",
+			"props": {
+				"flexProps": {
+					"alignContent": "STRETCH",
+					"alignItems": "STRETCH",
+					"direction": "INHERIT",
+					"flexDirection": "COLUMN",
+					"flexWrap": "NOWRAP",
+					"justifyContent": "FLEX_START"
+				},
+				"backgroundColor": "#EEEEEE",
+				"font": {},
+				"orientation": "PORTRAIT",
+				"name": "pgFeed",
+				"parent": null,
+				"children": [
+					"53f1-42e1-b492-d2ac",
+					"ca86-250d-34ed-2326",
+					"cf2b-c18e-8f8e-2581"
+				],
+				"width": 217.49999999999997,
+				"height": 349.73999999999995
+			}
+		},
+		{
+			"type": "StatusBar",
+			"id": "53f1-42e1-b492-d2ac",
+			"themeProps": {
+				"StatusBar": "Default"
+			},
+			"userProps": {},
+			"className": ".statusBar",
+			"props": {
+				"color": "#104682",
+				"visible": true,
+				"font": {},
+				"flexProps": {},
+				"name": "statusBar",
+				"parent": "d2fe-77d5-4b03-a202",
+				"children": [],
+				"isRemovable": false
+			}
+		},
+		{
+			"type": "HeaderBar",
+			"id": "ca86-250d-34ed-2326",
+			"themeProps": {
+				"HeaderBar": "Default"
+			},
+			"userProps": {
+				"title": "Live Feed"
+			},
+			"className": ".headerBar",
+			"props": {
+				"title": "Live Feed",
+				"titleColor": "#000000",
+				"visible": true,
+				"backgroundColor": "#FFFFFF",
+				"font": {},
+				"flexProps": {},
+				"name": "headerBar",
+				"parent": "d2fe-77d5-4b03-a202",
+				"children": [],
+				"isRemovable": false
+			}
+		},
+		{
+			"type": "ListView",
+			"id": "cf2b-c18e-8f8e-2581",
+			"themeProps": {
+				"Sizes": "Default"
+			},
+			"userProps": {
+				"usePageVariable": true,
+				"height": null,
+				"width": null,
+				"backgroundColor": "rgba( 155, 155, 155, 1 )",
+				"rowHeight": null,
+				"itemCount": null,
+				"flexProps": {
+					"flexGrow": 1
+				}
+			},
+			"className": ".listView",
+			"props": {
+				"height": null,
+				"width": null,
+				"touchEnabled": true,
+				"multiline": false,
+				"rowHeight": null,
+				"itemCount": null,
+				"visible": true,
+				"backgroundColor": "rgba( 155, 155, 155, 1 )",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"font": {},
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"positionType": "RELATIVE",
+					"flexGrow": 1
+				},
+				"usePageVariable": true,
+				"name": "lvFeed",
+				"parent": "d2fe-77d5-4b03-a202",
+				"children": []
+			}
+		}
+	]
+}

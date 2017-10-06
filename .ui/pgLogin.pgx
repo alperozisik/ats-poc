@@ -50,8 +50,8 @@
 				],
 				"parent": null,
 				"name": "pgLogin",
-				"width": 202.5,
-				"height": 360.18
+				"width": 217.49999999999997,
+				"height": 386.85999999999996
 			}
 		},
 		{
@@ -221,7 +221,8 @@
 				"width": 132,
 				"height": 90,
 				"image": "ats_logo.png",
-				"imageFillType": "ASPECTFIT"
+				"imageFillType": "ASPECTFIT",
+				"usePageVariable": true
 			},
 			"className": ".imageView",
 			"props": {
@@ -240,10 +241,11 @@
 					"positionType": "RELATIVE"
 				},
 				"image": "ats_logo.png",
+				"usePageVariable": true,
 				"children": [],
 				"parent": "7430-e342-8c7c-2392",
-				"name": "headerText",
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/ats/ui-editor/img/ats_logo.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.54&brandModel=iPhone%207"
+				"name": "imgLogo",
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/ats/ui-editor/img/ats_logo.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.58&brandModel=iPhone%207"
 			}
 		},
 		{
@@ -351,7 +353,7 @@
 			"userProps": {
 				"width": null,
 				"height": 40,
-				"text": "annamiracle@template.com",
+				"text": null,
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
 				"borderColor": "rgba( 197, 197, 197, 1 )",
 				"textColor": "rgba( 63, 63, 63, 1 )",
@@ -365,7 +367,7 @@
 				"height": 40,
 				"width": null,
 				"touchEnabled": true,
-				"text": "annamiracle@template.com",
+				"text": null,
 				"visible": true,
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
 				"alpha": 1,
@@ -543,7 +545,7 @@
 			"userProps": {
 				"width": null,
 				"height": 40,
-				"text": "12345",
+				"text": null,
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
 				"borderColor": "rgba( 197, 197, 197, 1 )",
 				"textColor": "rgba( 63, 63, 63, 1 )",
@@ -559,7 +561,7 @@
 				"height": 40,
 				"width": null,
 				"touchEnabled": true,
-				"text": "12345",
+				"text": null,
 				"visible": true,
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
 				"alpha": 1,
@@ -670,7 +672,7 @@
 				"usePageVariable": true,
 				"children": [],
 				"parent": "2252-0cc0-907a-043f",
-				"name": "loginButton"
+				"name": "btnLogin"
 			}
 		},
 		{

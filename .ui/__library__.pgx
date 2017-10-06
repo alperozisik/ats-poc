@@ -1,1 +1,427 @@
-{"components":[{"type":"Page","id":"584d-0cb1-c922-af10","userProps":{},"props":{"name":"__library__","parent":null,"children":["0068-2be6-7e0a-3313","5d0d-ec82-4848-3c2b"],"orientation":"PORTRAIT"},"version":"6.5.1","initialized":false},{"type":"StatusBar","id":"0068-2be6-7e0a-3313","userProps":{},"props":{"name":"statusBar","parent":"584d-0cb1-c922-af10","children":[],"visible":true,"isRemovable":false}},{"type":"HeaderBar","id":"5d0d-ec82-4848-3c2b","userProps":{"title":"__library__"},"props":{"name":"headerBar","parent":"584d-0cb1-c922-af10","children":[],"title":"__library__","visible":true,"isRemovable":false}}],"componentByID":{"584d-0cb1-c922-af10":{"type":"Page","id":"584d-0cb1-c922-af10","userProps":{},"props":{"name":"__library__","parent":null,"children":["0068-2be6-7e0a-3313","5d0d-ec82-4848-3c2b"],"orientation":"PORTRAIT"},"version":"6.5.1","initialized":false},"0068-2be6-7e0a-3313":{"type":"StatusBar","id":"0068-2be6-7e0a-3313","userProps":{},"props":{"name":"statusBar","parent":"584d-0cb1-c922-af10","children":[],"visible":true,"isRemovable":false}},"5d0d-ec82-4848-3c2b":{"type":"HeaderBar","id":"5d0d-ec82-4848-3c2b","userProps":{"title":"__library__"},"props":{"name":"headerBar","parent":"584d-0cb1-c922-af10","children":[],"title":"__library__","visible":true,"isRemovable":false}}}}
+{
+	"components": [
+		{
+			"type": "Page",
+			"id": "584d-0cb1-c922-af10",
+			"initialized": true,
+			"themeProps": {
+				"Page": "Default"
+			},
+			"userProps": {},
+			"className": ".page",
+			"version": "6.5.1",
+			"props": {
+				"flexProps": {
+					"alignContent": "STRETCH",
+					"alignItems": "STRETCH",
+					"direction": "INHERIT",
+					"flexDirection": "COLUMN",
+					"flexWrap": "NOWRAP",
+					"justifyContent": "FLEX_START"
+				},
+				"backgroundColor": "#EEEEEE",
+				"font": {},
+				"orientation": "PORTRAIT",
+				"name": "__library__",
+				"parent": null,
+				"children": [
+					"0068-2be6-7e0a-3313",
+					"5d0d-ec82-4848-3c2b",
+					"c86d-de10-3486-0556",
+					"2e11-5de0-3d00-f353"
+				],
+				"width": 750,
+				"height": 1334
+			}
+		},
+		{
+			"type": "StatusBar",
+			"id": "0068-2be6-7e0a-3313",
+			"themeProps": {
+				"StatusBar": "Default"
+			},
+			"userProps": {},
+			"className": ".statusBar",
+			"props": {
+				"color": "#104682",
+				"visible": false,
+				"font": {},
+				"flexProps": {},
+				"name": "statusBar",
+				"parent": "584d-0cb1-c922-af10",
+				"children": [],
+				"isRemovable": false
+			}
+		},
+		{
+			"type": "HeaderBar",
+			"id": "5d0d-ec82-4848-3c2b",
+			"themeProps": {
+				"HeaderBar": "Default"
+			},
+			"userProps": {
+				"title": "__library__"
+			},
+			"className": ".headerBar",
+			"props": {
+				"title": "__library__",
+				"titleColor": "#000000",
+				"visible": false,
+				"backgroundColor": "#FFFFFF",
+				"font": {},
+				"flexProps": {},
+				"name": "headerBar",
+				"parent": "584d-0cb1-c922-af10",
+				"children": [],
+				"isRemovable": false
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "c86d-de10-3486-0556",
+			"hiddenComponent": false,
+			"source": {
+				"page": "__library__"
+			},
+			"themeProps": {
+				"Sizes": "Default"
+			},
+			"userProps": {
+				"flexProps": {},
+				"left": 0,
+				"top": 0,
+				"width": 375,
+				"height": 140,
+				"backgroundColor": "rgba( 255, 255, 255, 1 )",
+				"id": 1110,
+				"paddingTop": 5,
+				"paddingLeft": 10,
+				"paddingRight": 10
+			},
+			"className": ".flexLayout",
+			"props": {
+				"height": 140,
+				"width": 375,
+				"touchEnabled": true,
+				"visible": true,
+				"backgroundColor": "rgba( 255, 255, 255, 1 )",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"font": {},
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"direction": "INHERIT",
+					"alignContent": "STRETCH",
+					"alignItems": "STRETCH",
+					"justifyContent": "FLEX_START",
+					"flexWrap": "NOWRAP",
+					"flexDirection": "COLUMN",
+					"positionType": "ABSOLUTE"
+				},
+				"left": 0,
+				"top": 0,
+				"id": 1110,
+				"paddingTop": 5,
+				"paddingLeft": 10,
+				"paddingRight": 10,
+				"name": "feedItem",
+				"parent": "584d-0cb1-c922-af10",
+				"children": [
+					"bae4-cb91-436c-f38a",
+					"d272-c992-5c79-2215",
+					"ee43-b4ee-790c-6b78",
+					"b028-9701-93e2-5bd3"
+				]
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "2e11-5de0-3d00-f353",
+			"source": {
+				"page": "__library__"
+			},
+			"themeProps": {
+				"Sizes": "Default"
+			},
+			"userProps": {
+				"left": -0.5,
+				"top": 200,
+				"width": 375,
+				"height": 100,
+				"backgroundColor": "rgba( 155, 155, 155, 1 )",
+				"id": 1010,
+				"flexProps": {
+					"alignItems": "CENTER",
+					"justifyContent": "CENTER"
+				}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"height": 100,
+				"width": 375,
+				"touchEnabled": true,
+				"visible": true,
+				"backgroundColor": "rgba( 155, 155, 155, 1 )",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"font": {},
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"direction": "INHERIT",
+					"alignContent": "STRETCH",
+					"alignItems": "CENTER",
+					"justifyContent": "CENTER",
+					"flexWrap": "NOWRAP",
+					"flexDirection": "COLUMN",
+					"positionType": "ABSOLUTE"
+				},
+				"left": -0.5,
+				"top": 200,
+				"id": 1010,
+				"name": "listViewLoadItem",
+				"parent": "584d-0cb1-c922-af10",
+				"children": [
+					"4a55-5279-662e-6dbf"
+				]
+			}
+		},
+		{
+			"type": "ActivityIndicator",
+			"id": "4a55-5279-662e-6dbf",
+			"source": {
+				"page": "__library__"
+			},
+			"themeProps": {
+				"Sizes": "Default"
+			},
+			"userProps": {
+				"id": 1011
+			},
+			"className": ".activityIndicator",
+			"props": {
+				"touchEnabled": true,
+				"width": 42,
+				"height": 42,
+				"color": "#104682",
+				"visible": true,
+				"backgroundColor": "rgba(0,0,0,0)",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"font": {},
+				"flexProps": {
+					"positionType": "RELATIVE",
+					"alignSelf": "AUTO"
+				},
+				"minHeight": 21,
+				"minWidth": 21,
+				"id": 1011,
+				"name": "activityIndicator1",
+				"parent": "2e11-5de0-3d00-f353",
+				"children": []
+			}
+		},
+		{
+			"type": "Label",
+			"id": "bae4-cb91-436c-f38a",
+			"source": {
+				"page": "__library__"
+			},
+			"themeProps": {
+				"Sizes": "Default"
+			},
+			"userProps": {
+				"width": 100,
+				"height": 18,
+				"textAlignment": "MIDCENTER",
+				"textColor": "rgba( 155, 155, 155, 1 )",
+				"text": "1 May 2017",
+				"id": 1111,
+				"marginBottom": 10,
+				"flexProps": {
+					"alignSelf": "CENTER"
+				}
+			},
+			"className": ".label",
+			"props": {
+				"width": 100,
+				"height": 18,
+				"touchEnabled": true,
+				"text": "1 May 2017",
+				"visible": true,
+				"multiline": false,
+				"backgroundColor": "#FFFFFF",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"textColor": "rgba( 155, 155, 155, 1 )",
+				"textAlignment": "MIDCENTER",
+				"font": {
+					"size": 16,
+					"bold": false,
+					"italic": false,
+					"family": "Arial"
+				},
+				"flexProps": {
+					"alignSelf": "CENTER",
+					"positionType": "RELATIVE"
+				},
+				"id": 1111,
+				"marginBottom": 10,
+				"name": "lblDate",
+				"parent": "c86d-de10-3486-0556",
+				"children": []
+			}
+		},
+		{
+			"type": "Label",
+			"id": "d272-c992-5c79-2215",
+			"source": {
+				"page": "__library__"
+			},
+			"themeProps": {
+				"Sizes": "Default"
+			},
+			"userProps": {
+				"text": "Doctor's Appointment",
+				"height": 28,
+				"width": null,
+				"marginBottom": 5,
+				"font": {
+					"size": 24
+				}
+			},
+			"className": ".label",
+			"props": {
+				"width": null,
+				"height": 28,
+				"touchEnabled": true,
+				"text": "Doctor's Appointment",
+				"visible": true,
+				"multiline": false,
+				"backgroundColor": "#FFFFFF",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"textColor": "#000000",
+				"textAlignment": "MIDLEFT",
+				"font": {
+					"size": 24,
+					"bold": false,
+					"italic": false,
+					"family": "Arial"
+				},
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"positionType": "RELATIVE"
+				},
+				"marginBottom": 5,
+				"name": "lblTitle",
+				"parent": "c86d-de10-3486-0556",
+				"children": []
+			}
+		},
+		{
+			"type": "Label",
+			"id": "ee43-b4ee-790c-6b78",
+			"source": {
+				"page": "__library__"
+			},
+			"themeProps": {
+				"Sizes": "Default"
+			},
+			"userProps": {
+				"width": null,
+				"height": 25,
+				"textColor": "rgba( 74, 74, 74, 1 )",
+				"text": "Department of Hematology - Dr. Zubadi",
+				"marginBottom": 10,
+				"font": {
+					"size": 18
+				}
+			},
+			"className": ".label",
+			"props": {
+				"width": null,
+				"height": 25,
+				"touchEnabled": true,
+				"text": "Department of Hematology - Dr. Zubadi",
+				"visible": true,
+				"multiline": false,
+				"backgroundColor": "#FFFFFF",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"textColor": "rgba( 74, 74, 74, 1 )",
+				"textAlignment": "MIDLEFT",
+				"font": {
+					"size": 18,
+					"bold": false,
+					"italic": false,
+					"family": "Arial"
+				},
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"positionType": "RELATIVE"
+				},
+				"marginBottom": 10,
+				"name": "lblSubtitle",
+				"parent": "c86d-de10-3486-0556",
+				"children": []
+			}
+		},
+		{
+			"type": "Label",
+			"id": "b028-9701-93e2-5bd3",
+			"source": {
+				"page": "__library__"
+			},
+			"themeProps": {
+				"Sizes": "Default"
+			},
+			"userProps": {
+				"multiline": true,
+				"textColor": "rgba( 74, 74, 74, 1 )",
+				"textAlignment": "TOPLEFT",
+				"width": null,
+				"text": "Your appointment is dated as 01/05/2017 at 06:00 pm with Dr. Zubadi At the Department of Hematology",
+				"height": 35,
+				"id": 1113,
+				"font": {
+					"size": 16
+				}
+			},
+			"className": ".label",
+			"props": {
+				"width": null,
+				"height": 35,
+				"touchEnabled": true,
+				"text": "Your appointment is dated as 01/05/2017 at 06:00 pm with Dr. Zubadi At the Department of Hematology",
+				"visible": true,
+				"multiline": true,
+				"backgroundColor": "#FFFFFF",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"textColor": "rgba( 74, 74, 74, 1 )",
+				"textAlignment": "TOPLEFT",
+				"font": {
+					"size": 16,
+					"bold": false,
+					"italic": false,
+					"family": "Arial"
+				},
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"positionType": "RELATIVE"
+				},
+				"id": 1113,
+				"name": "lblDescription",
+				"parent": "c86d-de10-3486-0556",
+				"children": []
+			}
+		}
+	]
+}
