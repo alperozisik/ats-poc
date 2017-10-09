@@ -30,8 +30,8 @@
 					"c86d-de10-3486-0556",
 					"2e11-5de0-3d00-f353"
 				],
-				"width": 750,
-				"height": 1334
+				"width": 202.5,
+				"height": 360.18
 			}
 		},
 		{
@@ -145,8 +145,8 @@
 				"Sizes": "Default"
 			},
 			"userProps": {
-				"left": -0.5,
-				"top": 200,
+				"left": 0,
+				"top": 198.14814814814812,
 				"width": 375,
 				"height": 100,
 				"backgroundColor": "rgba( 155, 155, 155, 1 )",
@@ -177,8 +177,8 @@
 					"flexDirection": "COLUMN",
 					"positionType": "ABSOLUTE"
 				},
-				"left": -0.5,
-				"top": 200,
+				"left": 0,
+				"top": 198.14814814814812,
 				"id": 1010,
 				"name": "listViewLoadItem",
 				"parent": "584d-0cb1-c922-af10",
