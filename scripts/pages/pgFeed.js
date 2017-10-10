@@ -5,7 +5,8 @@ const FeedItem = require("../components/FeedItem");
 const ListViewLoadItem = require("../components/ListViewLoadItem");
 const FeedItemDesign = require('library/FeedItem');
 const ListViewLoadItemDesign = require('library/ListViewLoadItem');
-
+const Router = require("sf-core/ui/router");
+const Color = require('sf-core/ui/color');
 
 const PgFeed = extend(PgFeedDesign)(
     // Constructor
@@ -36,8 +37,10 @@ function onShow(superOnShow) {
 function onLoad(superOnLoad) {
     superOnLoad();
     const page = this;
-    page.headerBar.leftItemEnabled = false;
+    page.headerBar.itemColor = Color.create("#104682");
     
+    page.android.onBackButtonPressed = function() { Router.goBack()};
+
     const lvFeed = page.lvFeed;
     lvFeed.refreshEnabled = false;
     // lvFeed.rowHeight = Math.max(FeedItemDesign.defaults.designHeight, ListViewLoadItemDesign.defaults.designHeight);
@@ -45,7 +48,6 @@ function onLoad(superOnLoad) {
     lvFeed.onRowHeight = function(index) {
         var height = index === page.feedData.length ?
             ListViewLoadItemDesign.defaults.designHeight : FeedItemDesign.defaults.designHeight;
-        console.log(`row height for index ${index} is ${height}`);
         return height;
     };
 
@@ -55,23 +57,27 @@ function onLoad(superOnLoad) {
         var listViewLoadItem = new ListViewLoadItem();
         listViewItem.addChild(feedItem);
         listViewItem.addChild(listViewLoadItem);
-        // console.log("row created");
         return listViewItem;
     };
 
     lvFeed.onRowBind = function(listViewItem, index) {
-        // try {
         var lastRow = index === page.feedData.length;
         var feedItem = listViewItem.findChildById(1110);
         var listViewLoadItem = listViewItem.findChildById(1010);
         feedItem.visible = !lastRow;
         listViewLoadItem.visible = lastRow;
-        // }
-        // catch (ex) {}
-        // console.log(`row bind for index ${index}`);
+        listViewLoadItem.activityIndicator.visible = lastRow;
     };
-
-
+    
+    lvFeed.onRowSelected = function(listViewItem,index){
+        var lastRow = index === page.feedData.length;
+        if(lastRow)
+            return;
+        Router.go("pgDoctorAppointment", {
+            data: page.feedData[index],
+            chart: true
+        });
+    };
 }
 
 function fetchData() {

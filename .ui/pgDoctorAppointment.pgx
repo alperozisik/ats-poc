@@ -1,0 +1,259 @@
+{
+	"components": [
+		{
+			"type": "Page",
+			"id": "fc76-6c92-a2f3-c759",
+			"initialized": true,
+			"themeProps": {
+				"Page": "Default"
+			},
+			"userProps": {
+				"paddingRight": 10,
+				"paddingLeft": 10
+			},
+			"className": ".page",
+			"version": "6.5.1",
+			"props": {
+				"flexProps": {
+					"alignContent": "STRETCH",
+					"alignItems": "STRETCH",
+					"direction": "INHERIT",
+					"flexDirection": "COLUMN",
+					"flexWrap": "NOWRAP",
+					"justifyContent": "FLEX_START"
+				},
+				"backgroundColor": "#FFFFFF",
+				"font": {},
+				"orientation": "PORTRAIT",
+				"paddingRight": 10,
+				"paddingLeft": 10,
+				"name": "pgDoctorAppointment",
+				"parent": null,
+				"children": [
+					"c496-365a-c619-a887",
+					"0329-dc9c-54ff-c268",
+					"a674-5a96-4d73-de1b",
+					"1060-2380-ba39-38cc",
+					"e301-ab21-64f1-fccc",
+					"6a1a-f40c-4933-54e0"
+				],
+				"width": 292.5,
+				"height": 470.34
+			}
+		},
+		{
+			"type": "StatusBar",
+			"id": "c496-365a-c619-a887",
+			"themeProps": {
+				"StatusBar": "Default"
+			},
+			"userProps": {},
+			"className": ".statusBar",
+			"props": {
+				"color": "#104682",
+				"visible": true,
+				"font": {},
+				"flexProps": {},
+				"name": "statusBar",
+				"parent": "fc76-6c92-a2f3-c759",
+				"children": [],
+				"isRemovable": false
+			}
+		},
+		{
+			"type": "HeaderBar",
+			"id": "0329-dc9c-54ff-c268",
+			"themeProps": {
+				"HeaderBar": "Default"
+			},
+			"userProps": {
+				"title": "Details"
+			},
+			"className": ".headerBar",
+			"props": {
+				"title": "Details",
+				"titleColor": "#000000",
+				"visible": true,
+				"backgroundColor": "#FFFFFF",
+				"font": {},
+				"flexProps": {},
+				"name": "headerBar",
+				"parent": "fc76-6c92-a2f3-c759",
+				"children": [],
+				"isRemovable": false
+			}
+		},
+		{
+			"type": "Label",
+			"id": "a674-5a96-4d73-de1b",
+			"themeProps": {
+				"Sizes": "Default"
+			},
+			"userProps": {
+				"width": null,
+				"textAlignment": "MIDCENTER",
+				"textColor": "rgba( 155, 155, 155, 0.58 )",
+				"text": "Doctor's Appointment",
+				"marginBottom": 5,
+				"font": {
+					"size": 24,
+					"family": "Arial"
+				}
+			},
+			"className": ".label",
+			"props": {
+				"width": null,
+				"height": 70,
+				"touchEnabled": true,
+				"text": "Doctor's Appointment",
+				"visible": true,
+				"multiline": false,
+				"backgroundColor": "#FFFFFF",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"textColor": "rgba( 155, 155, 155, 0.58 )",
+				"textAlignment": "MIDCENTER",
+				"font": {
+					"size": 24,
+					"bold": false,
+					"italic": false,
+					"family": "Arial"
+				},
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"positionType": "RELATIVE"
+				},
+				"marginBottom": 5,
+				"name": "lblTitle",
+				"parent": "fc76-6c92-a2f3-c759",
+				"children": []
+			}
+		},
+		{
+			"type": "Label",
+			"id": "1060-2380-ba39-38cc",
+			"themeProps": {
+				"Sizes": "Default"
+			},
+			"userProps": {
+				"multiline": true,
+				"textColor": "rgba( 74, 74, 74, 1 )",
+				"text": "This area will include the description of the appointment if any. We will mainly focus on the information provided by the web service",
+				"width": null,
+				"height": 130,
+				"marginLeft": 10,
+				"marginRight": 10,
+				"marginBottom": 5,
+				"font": {
+					"size": 19
+				}
+			},
+			"className": ".label",
+			"props": {
+				"width": null,
+				"height": 130,
+				"touchEnabled": true,
+				"text": "This area will include the description of the appointment if any. We will mainly focus on the information provided by the web service",
+				"visible": true,
+				"multiline": true,
+				"backgroundColor": "#FFFFFF",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"textColor": "rgba( 74, 74, 74, 1 )",
+				"textAlignment": "MIDLEFT",
+				"font": {
+					"size": 19,
+					"bold": false,
+					"italic": false,
+					"family": "Arial"
+				},
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"positionType": "RELATIVE"
+				},
+				"marginLeft": 10,
+				"marginRight": 10,
+				"marginBottom": 5,
+				"name": "lblSubTitle",
+				"parent": "fc76-6c92-a2f3-c759",
+				"children": []
+			}
+		},
+		{
+			"type": "WebView",
+			"id": "e301-ab21-64f1-fccc",
+			"themeProps": {
+				"Sizes": "Default"
+			},
+			"userProps": {
+				"width": null,
+				"marginBottom": 5,
+				"usePageVariable": true
+			},
+			"className": ".webView",
+			"props": {
+				"height": 200,
+				"width": null,
+				"touchEnabled": true,
+				"visible": true,
+				"backgroundColor": "#FFFFFF",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"font": {},
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"positionType": "RELATIVE"
+				},
+				"marginBottom": 5,
+				"usePageVariable": true,
+				"name": "wvChart",
+				"parent": "fc76-6c92-a2f3-c759",
+				"children": []
+			}
+		},
+		{
+			"type": "ListView",
+			"id": "6a1a-f40c-4933-54e0",
+			"themeProps": {
+				"Sizes": "Default"
+			},
+			"userProps": {
+				"width": null,
+				"height": null,
+				"usePageVariable": true,
+				"rowHeight": 60,
+				"itemCount": null,
+				"flexProps": {
+					"flexGrow": 1
+				}
+			},
+			"className": ".listView",
+			"props": {
+				"height": null,
+				"width": null,
+				"touchEnabled": true,
+				"multiline": false,
+				"itemCount": null,
+				"visible": true,
+				"backgroundColor": "#FFFFFF",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"font": {},
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"positionType": "RELATIVE",
+					"flexGrow": 1
+				},
+				"usePageVariable": true,
+				"name": "lvResults",
+				"parent": "fc76-6c92-a2f3-c759",
+				"children": [],
+				"rowHeight": 60
+			}
+		}
+	]
+}

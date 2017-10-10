@@ -19,7 +19,7 @@
 					"flexWrap": "NOWRAP",
 					"justifyContent": "FLEX_START"
 				},
-				"backgroundColor": "#EEEEEE",
+				"backgroundColor": "#FFFFFF",
 				"font": {},
 				"orientation": "PORTRAIT",
 				"name": "__library__",
@@ -28,10 +28,11 @@
 					"0068-2be6-7e0a-3313",
 					"5d0d-ec82-4848-3c2b",
 					"c86d-de10-3486-0556",
-					"2e11-5de0-3d00-f353"
+					"2e11-5de0-3d00-f353",
+					"6222-8e08-4c3e-cbc9"
 				],
-				"width": 750,
-				"height": 1334
+				"width": 292.5,
+				"height": 520.26
 			}
 		},
 		{
@@ -198,7 +199,8 @@
 				"Sizes": "Default"
 			},
 			"userProps": {
-				"id": 1011
+				"id": 1011,
+				"usePageVariable": true
 			},
 			"className": ".activityIndicator",
 			"props": {
@@ -219,9 +221,10 @@
 				"minHeight": 21,
 				"minWidth": 21,
 				"id": 1011,
-				"name": "activityIndicator1",
+				"name": "activityIndicator",
 				"parent": "2e11-5de0-3d00-f353",
-				"children": []
+				"children": [],
+				"usePageVariable": true
 			}
 		},
 		{
@@ -474,6 +477,211 @@
 				"top": 0,
 				"name": "flTop",
 				"parent": "c86d-de10-3486-0556",
+				"children": []
+			}
+		},
+		{
+			"type": "ListViewItem",
+			"id": "6222-8e08-4c3e-cbc9",
+			"source": {
+				"page": "__library__"
+			},
+			"themeProps": {
+				"Sizes": "Default"
+			},
+			"userProps": {
+				"left": 6.41025641025641,
+				"top": 362.8205128205128,
+				"width": 362.8205128205128,
+				"height": 50,
+				"paddingLeft": 10,
+				"paddingRight": 10,
+				"flexProps": {
+					"flexDirection": "ROW"
+				}
+			},
+			"className": ".listViewItem",
+			"props": {
+				"height": 50,
+				"width": 362.8205128205128,
+				"touchEnabled": true,
+				"visible": true,
+				"backgroundColor": "#FFFFFF",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"font": {},
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"direction": "INHERIT",
+					"alignContent": "STRETCH",
+					"alignItems": "STRETCH",
+					"justifyContent": "FLEX_START",
+					"flexWrap": "NOWRAP",
+					"flexDirection": "ROW",
+					"positionType": "ABSOLUTE"
+				},
+				"left": 6.41025641025641,
+				"top": 362.8205128205128,
+				"paddingLeft": 10,
+				"paddingRight": 10,
+				"name": "lviDoctorAppointmentDetailsRow",
+				"parent": "584d-0cb1-c922-af10",
+				"children": [
+					"bfad-b3d5-0f25-5ecb",
+					"6ed7-16ee-1f68-24eb",
+					"3ee2-2d6e-fe29-1ab3"
+				]
+			}
+		},
+		{
+			"type": "Label",
+			"id": "6ed7-16ee-1f68-24eb",
+			"source": {
+				"page": "__library__"
+			},
+			"themeProps": {
+				"Sizes": "Default"
+			},
+			"userProps": {
+				"width": null,
+				"height": null,
+				"textAlignment": "MIDRIGHT",
+				"marginRight": null,
+				"id": 1202,
+				"flexProps": {
+					"flexGrow": 1
+				}
+			},
+			"className": ".label",
+			"props": {
+				"width": null,
+				"height": null,
+				"touchEnabled": true,
+				"text": "Label",
+				"visible": true,
+				"multiline": false,
+				"backgroundColor": "#FFFFFF",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"textColor": "#000000",
+				"textAlignment": "MIDRIGHT",
+				"font": {
+					"size": 16,
+					"bold": false,
+					"italic": false,
+					"family": "Arial"
+				},
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"positionType": "RELATIVE",
+					"flexGrow": 1
+				},
+				"marginRight": null,
+				"id": 1202,
+				"name": "lblValue",
+				"parent": "6222-8e08-4c3e-cbc9",
+				"children": []
+			}
+		},
+		{
+			"type": "Label",
+			"id": "bfad-b3d5-0f25-5ecb",
+			"source": {
+				"page": "__library__"
+			},
+			"themeProps": {
+				"Sizes": "Default"
+			},
+			"userProps": {
+				"width": null,
+				"height": null,
+				"textAlignment": "MIDLEFT",
+				"id": 1201,
+				"flexProps": {
+					"flexGrow": 2
+				}
+			},
+			"className": ".label",
+			"props": {
+				"width": null,
+				"height": null,
+				"touchEnabled": true,
+				"text": "Label",
+				"visible": true,
+				"multiline": false,
+				"backgroundColor": "#FFFFFF",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"textColor": "#000000",
+				"textAlignment": "MIDLEFT",
+				"font": {
+					"size": 16,
+					"bold": false,
+					"italic": false,
+					"family": "Arial"
+				},
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"positionType": "RELATIVE",
+					"flexGrow": 2
+				},
+				"id": 1201,
+				"name": "lblTitle",
+				"parent": "6222-8e08-4c3e-cbc9",
+				"children": []
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "3ee2-2d6e-fe29-1ab3",
+			"source": {
+				"page": "__library__"
+			},
+			"themeProps": {
+				"Sizes": "Default"
+			},
+			"userProps": {
+				"width": null,
+				"height": 1,
+				"left": 10,
+				"bottom": 0,
+				"right": 0,
+				"backgroundColor": "rgba( 155, 155, 155, 1 )",
+				"id": 1203,
+				"flexProps": {
+					"positionType": "ABSOLUTE"
+				}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"height": 1,
+				"width": null,
+				"touchEnabled": true,
+				"visible": true,
+				"backgroundColor": "rgba( 155, 155, 155, 1 )",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"font": {},
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"direction": "INHERIT",
+					"alignContent": "STRETCH",
+					"alignItems": "STRETCH",
+					"justifyContent": "FLEX_START",
+					"flexWrap": "NOWRAP",
+					"flexDirection": "COLUMN",
+					"positionType": "ABSOLUTE"
+				},
+				"left": 10,
+				"bottom": 0,
+				"right": 0,
+				"id": 1203,
+				"name": "flBottomLine",
+				"parent": "6222-8e08-4c3e-cbc9",
 				"children": []
 			}
 		}
