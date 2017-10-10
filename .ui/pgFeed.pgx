@@ -29,8 +29,8 @@
 					"ca86-250d-34ed-2326",
 					"cf2b-c18e-8f8e-2581"
 				],
-				"width": 217.49999999999997,
-				"height": 349.73999999999995
+				"width": 236.25,
+				"height": 379.89
 			}
 		},
 		{
@@ -83,11 +83,10 @@
 			},
 			"userProps": {
 				"usePageVariable": true,
-				"height": null,
 				"width": null,
-				"backgroundColor": "rgba( 155, 155, 155, 1 )",
-				"rowHeight": null,
+				"height": null,
 				"itemCount": null,
+				"backgroundColor": "rgba( 155, 155, 155, 1 )",
 				"flexProps": {
 					"flexGrow": 1
 				}
@@ -98,7 +97,6 @@
 				"width": null,
 				"touchEnabled": true,
 				"multiline": false,
-				"rowHeight": null,
 				"itemCount": null,
 				"visible": true,
 				"backgroundColor": "rgba( 155, 155, 155, 1 )",
