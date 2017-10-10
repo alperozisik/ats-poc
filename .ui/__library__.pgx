@@ -30,8 +30,8 @@
 					"c86d-de10-3486-0556",
 					"2e11-5de0-3d00-f353"
 				],
-				"width": 202.5,
-				"height": 360.18
+				"width": 277.5,
+				"height": 493.58
 			}
 		},
 		{
@@ -289,6 +289,7 @@
 				"height": 28,
 				"width": null,
 				"marginBottom": 5,
+				"id": 1112,
 				"font": {
 					"size": 24
 				}
@@ -320,7 +321,8 @@
 				"marginBottom": 5,
 				"name": "lblTitle",
 				"parent": "c86d-de10-3486-0556",
-				"children": []
+				"children": [],
+				"id": 1112
 			}
 		},
 		{
@@ -338,6 +340,7 @@
 				"textColor": "rgba( 74, 74, 74, 1 )",
 				"text": "Department of Hematology - Dr. Zubadi",
 				"marginBottom": 10,
+				"id": 1113,
 				"font": {
 					"size": 18
 				}
@@ -369,7 +372,8 @@
 				"marginBottom": 10,
 				"name": "lblSubtitle",
 				"parent": "c86d-de10-3486-0556",
-				"children": []
+				"children": [],
+				"id": 1113
 			}
 		},
 		{
@@ -388,7 +392,7 @@
 				"width": null,
 				"text": "Your appointment is dated as 01/05/2017 at 06:00 pm with Dr. Zubadi At the Department of Hematology",
 				"height": 35,
-				"id": 1113,
+				"id": 1114,
 				"font": {
 					"size": 16
 				}
@@ -417,7 +421,7 @@
 					"alignSelf": "AUTO",
 					"positionType": "RELATIVE"
 				},
-				"id": 1113,
+				"id": 1114,
 				"name": "lblDescription",
 				"parent": "c86d-de10-3486-0556",
 				"children": []
