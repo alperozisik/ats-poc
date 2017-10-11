@@ -1,11 +1,8 @@
-/* 
-		You can modify its contents.
-*/
 const extend = require('js-base/core/extend');
 const PgLoginDesign = require('ui/ui_pgLogin');
 const fingerprint = require("sf-extension-utils").fingerprint;
 const Router = require('sf-core/router');
-
+const rau = require("sf-extension-utils").rau;
 const PgLogin = extend(PgLoginDesign)(
   // Constructor
   function(_super) {
@@ -24,15 +21,15 @@ const PgLogin = extend(PgLoginDesign)(
  * @param {function} superOnShow super onShow function
  * @param {Object} parameters passed from Router.go function
  */
-function onShow(superOnShow, data) {
+function onShow(superOnShow, data = {}) {
   superOnShow();
-  data = data || {};
   const page = this;
 
   if (data.appStart) {
     fingerprint.init({
       userNameTextBox: page.userNameInput,
       passwordTextBox: page.passwordInput,
+      autoLogin: true,
       callback: function(err, fingerprintResult) {
         var password;
         if (err)
@@ -51,6 +48,9 @@ function onShow(superOnShow, data) {
         });
       }
     });
+    rau.checkUpdate({
+      silent: false,
+    });
   }
 }
 
@@ -66,7 +66,7 @@ function onLoad(superOnLoad) {
     this.userNameInput.text = "annamiracle@template.com";
     this.passwordInput.text = "12345";
   };
-  
+
   this.btnLogin.onPress = () => {
     fingerprint.loginWithFingerprint();
   };
@@ -75,20 +75,20 @@ function onLoad(superOnLoad) {
 
 function loginWithUserNameAndPassword(username, password, callback) {
   callback(null);
-/*  Http.request({
-    url: getTokenUrl,
-    method: "POST",
-    body: JSON.stringify({
-      username,
-      password
-    })
-  }, function(response) {
-    //handle response
-    callback(null); //to call .success
-  }, function(e) {
-    //invalid credentials?
-    callback(e);
-  });*/
+  /*  Http.request({
+      url: getTokenUrl,
+      method: "POST",
+      body: JSON.stringify({
+        username,
+        password
+      })
+    }, function(response) {
+      //handle response
+      callback(null); //to call .success
+    }, function(e) {
+      //invalid credentials?
+      callback(e);
+    });*/
 }
 
 module && (module.exports = PgLogin);

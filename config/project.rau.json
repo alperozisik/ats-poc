@@ -3,9 +3,9 @@
         "rau": {
             "formatVersion": "1.0.0",
             "hashType": "md5",
-            "profileKey": "myAppKey-Secret",
+            "profileKey": "Kzj1j1ed1b5nNTR4nLb8YawFy5gibsub",
             "revision": 1,
-            "channels": ["production", "test"],
+            "channels": ["poc"],
             "meta": {
                 "whatIsWritten in data": "as data object in here",
                 "also": "it can be null or missing",

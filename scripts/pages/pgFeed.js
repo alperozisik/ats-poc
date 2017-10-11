@@ -114,7 +114,7 @@ function fetchData() {
         page.feedData = [];
         page.feedData.length = 10;
         loadData.call(page);
-    }, 150);
+    }, 450);
 
 }
 
