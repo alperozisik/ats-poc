@@ -7,13 +7,19 @@ const FeedItemDesign = require('library/FeedItem');
 const ListViewLoadItemDesign = require('library/ListViewLoadItem');
 const Router = require("sf-core/ui/router");
 const Color = require('sf-core/ui/color');
-
+const FloatingMenu = require("sf-core/ui/floatingmenu");
+const Image = require("sf-core/ui/image");
+const mainColor = Color.create("#104682");
 const PgFeed = extend(PgFeedDesign)(
     // Constructor
     function(_super) {
         _super(this);
         this.onShow = onShow.bind(this, this.onShow.bind(this));
         this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
+
+
+
+
 
     });
 
@@ -27,6 +33,27 @@ function onShow(superOnShow) {
     superOnShow();
     const page = this;
     fetchData.call(page);
+
+    if (!page.fab) {
+        let fabItems = [
+            new FloatingMenu.Item({
+                title: "Book Appointmnet",
+                titleColor: Color.BLACK,
+                icon: Image.createFromFile("images://ic_date_range.png"),
+                color: Color.WHITE,
+                onClick: function() {
+                    Router.go("pgBookAppointment", { new: true });
+                }
+            })
+        ];
+        page.fab = new FloatingMenu({
+            items: fabItems,
+            rotateEnabled: true,
+            icon: Image.createFromFile("images://ic_add_white.png"),
+            color: mainColor
+        });
+        page.layout.addChild(page.fab);
+    }
 }
 
 /**
@@ -37,9 +64,9 @@ function onShow(superOnShow) {
 function onLoad(superOnLoad) {
     superOnLoad();
     const page = this;
-    page.headerBar.itemColor = Color.create("#104682");
-    
-    page.android.onBackButtonPressed = function() { Router.goBack()};
+    page.headerBar.itemColor = mainColor;
+
+    page.android.onBackButtonPressed = function() { Router.goBack() };
 
     const lvFeed = page.lvFeed;
     lvFeed.refreshEnabled = false;
@@ -68,10 +95,10 @@ function onLoad(superOnLoad) {
         listViewLoadItem.visible = lastRow;
         listViewLoadItem.activityIndicator.visible = lastRow;
     };
-    
-    lvFeed.onRowSelected = function(listViewItem,index){
+
+    lvFeed.onRowSelected = function(listViewItem, index) {
         var lastRow = index === page.feedData.length;
-        if(lastRow)
+        if (lastRow)
             return;
         Router.go("pgDoctorAppointment", {
             data: page.feedData[index],

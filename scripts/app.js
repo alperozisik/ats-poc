@@ -23,6 +23,8 @@ require("sf-extension-utils");
 Router.add("pgLogin", require("./pages/pgLogin"), true);
 Router.add("pgFeed", require("./pages/pgFeed"));
 Router.add("pgDoctorAppointment", require("./pages/pgDoctorAppointment"));
+Router.add("pgBookAppointment", require("./pages/pgBookAppointment"));
+
 Router.go("pgLogin", {
     appStart: true
 });

@@ -1,0 +1,351 @@
+{
+	"components": [
+		{
+			"type": "Page",
+			"id": "0f4f-3b03-090c-aa7d",
+			"initialized": true,
+			"themeProps": {
+				"Page": "Default"
+			},
+			"userProps": {},
+			"className": ".page",
+			"version": "6.5.1",
+			"props": {
+				"flexProps": {
+					"alignContent": "STRETCH",
+					"alignItems": "STRETCH",
+					"direction": "INHERIT",
+					"flexDirection": "COLUMN",
+					"flexWrap": "NOWRAP",
+					"justifyContent": "FLEX_START"
+				},
+				"backgroundColor": "#FFFFFF",
+				"font": {},
+				"orientation": "PORTRAIT",
+				"name": "pgBookAppointment",
+				"parent": null,
+				"children": [
+					"bfde-7840-8a95-9dd3",
+					"05e0-9005-d6b8-b098",
+					"7197-031b-5d1e-6f45",
+					"f272-ba1d-41c8-1045"
+				],
+				"width": 292.5,
+				"height": 470.34
+			}
+		},
+		{
+			"type": "StatusBar",
+			"id": "bfde-7840-8a95-9dd3",
+			"themeProps": {
+				"StatusBar": "Default"
+			},
+			"userProps": {},
+			"className": ".statusBar",
+			"props": {
+				"color": "#104682",
+				"visible": true,
+				"font": {},
+				"flexProps": {},
+				"name": "statusBar",
+				"parent": "0f4f-3b03-090c-aa7d",
+				"children": [],
+				"isRemovable": false
+			}
+		},
+		{
+			"type": "HeaderBar",
+			"id": "05e0-9005-d6b8-b098",
+			"themeProps": {
+				"HeaderBar": "Default"
+			},
+			"userProps": {
+				"title": "Book Appointment"
+			},
+			"className": ".headerBar",
+			"props": {
+				"title": "Book Appointment",
+				"titleColor": "#000000",
+				"visible": true,
+				"backgroundColor": "#FFFFFF",
+				"font": {},
+				"flexProps": {},
+				"name": "headerBar",
+				"parent": "0f4f-3b03-090c-aa7d",
+				"children": [],
+				"isRemovable": false
+			}
+		},
+		{
+			"type": "ScrollView",
+			"id": "7197-031b-5d1e-6f45",
+			"themeProps": {
+				"Sizes": "Default"
+			},
+			"userProps": {
+				"width": null,
+				"height": null,
+				"marginTop": null,
+				"paddingLeft": 15,
+				"paddingRight": 15,
+				"paddingTop": 20,
+				"paddingBottom": 20,
+				"usePageVariable": true,
+				"flexProps": {
+					"flexGrow": 1,
+					"flexDirection": "COLUMN_REVERSE"
+				}
+			},
+			"className": ".scrollView",
+			"props": {
+				"height": null,
+				"width": null,
+				"touchEnabled": true,
+				"visible": true,
+				"backgroundColor": "#FFFFFF",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"align": "VERTICAL",
+				"scrollBarEnabled": true,
+				"font": {},
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"direction": "INHERIT",
+					"alignContent": "STRETCH",
+					"alignItems": "STRETCH",
+					"justifyContent": "FLEX_START",
+					"flexWrap": "NOWRAP",
+					"flexDirection": "COLUMN_REVERSE",
+					"positionType": "RELATIVE",
+					"flexGrow": 1
+				},
+				"marginTop": null,
+				"paddingLeft": 15,
+				"paddingRight": 15,
+				"paddingTop": 20,
+				"paddingBottom": 20,
+				"usePageVariable": true,
+				"name": "svCards",
+				"parent": "0f4f-3b03-090c-aa7d",
+				"children": [
+					"e830-906b-8be9-437a",
+					"5c45-1a46-777e-3665",
+					"a1fb-ed41-d572-ef80"
+				]
+			}
+		},
+		{
+			"type": "Button",
+			"id": "f272-ba1d-41c8-1045",
+			"themeProps": {
+				"Sizes": "Default",
+				"Highlights": "Default"
+			},
+			"userProps": {
+				"width": null,
+				"text": "Next",
+				"usePageVariable": true
+			},
+			"className": ".button",
+			"props": {
+				"width": null,
+				"height": 70,
+				"touchEnabled": true,
+				"text": "Next",
+				"visible": true,
+				"backgroundColor": "#104682",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"textColor": "#FFFFFF",
+				"textAlignment": "MIDCENTER",
+				"font": {
+					"size": 16,
+					"bold": false,
+					"italic": false,
+					"family": "Arial"
+				},
+				"flexProps": {
+					"positionType": "RELATIVE",
+					"alignSelf": "AUTO"
+				},
+				"usePageVariable": true,
+				"name": "btnNext",
+				"parent": "0f4f-3b03-090c-aa7d",
+				"children": []
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "a1fb-ed41-d572-ef80",
+			"hiddenComponent": false,
+			"source": {
+				"page": "__library__",
+				"type": "flCard",
+				"id": "42d8-c054-7638-f441"
+			},
+			"themeProps": {
+				"Sizes": "Default"
+			},
+			"userProps": {
+				"width": null,
+				"height": 180,
+				"left": null,
+				"top": 0,
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"marginBottom": 10,
+				"usePageVariable": true,
+				"flexProps": {
+					"positionType": "RELATIVE"
+				},
+				"flex": {
+					"positionType": 0
+				}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"height": 180,
+				"width": null,
+				"touchEnabled": true,
+				"visible": true,
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"font": {},
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"direction": "INHERIT",
+					"alignContent": "STRETCH",
+					"alignItems": "STRETCH",
+					"justifyContent": "FLEX_START",
+					"flexWrap": "NOWRAP",
+					"flexDirection": "COLUMN",
+					"positionType": "RELATIVE"
+				},
+				"left": null,
+				"top": 0,
+				"marginBottom": 10,
+				"usePageVariable": true,
+				"name": "flCardDepartment",
+				"parent": "7197-031b-5d1e-6f45",
+				"children": []
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "5c45-1a46-777e-3665",
+			"hiddenComponent": false,
+			"source": {
+				"page": "__library__",
+				"type": "flCard",
+				"id": "42d8-c054-7638-f441"
+			},
+			"themeProps": {
+				"Sizes": "Default"
+			},
+			"userProps": {
+				"width": null,
+				"height": 180,
+				"left": null,
+				"top": 0,
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"marginBottom": 10,
+				"usePageVariable": true,
+				"flexProps": {
+					"positionType": "RELATIVE"
+				},
+				"flex": {
+					"positionType": 0
+				}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"height": 180,
+				"width": null,
+				"touchEnabled": true,
+				"visible": true,
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"font": {},
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"direction": "INHERIT",
+					"alignContent": "STRETCH",
+					"alignItems": "STRETCH",
+					"justifyContent": "FLEX_START",
+					"flexWrap": "NOWRAP",
+					"flexDirection": "COLUMN",
+					"positionType": "RELATIVE"
+				},
+				"left": null,
+				"top": 0,
+				"marginBottom": 10,
+				"usePageVariable": true,
+				"name": "flCardDoctor",
+				"parent": "7197-031b-5d1e-6f45",
+				"children": []
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "e830-906b-8be9-437a",
+			"hiddenComponent": false,
+			"source": {
+				"page": "__library__",
+				"type": "flCard",
+				"id": "42d8-c054-7638-f441"
+			},
+			"themeProps": {
+				"Sizes": "Default"
+			},
+			"userProps": {
+				"width": null,
+				"height": 180,
+				"left": null,
+				"top": 0,
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"marginBottom": 10,
+				"usePageVariable": true,
+				"flexProps": {
+					"positionType": "RELATIVE"
+				},
+				"flex": {
+					"positionType": 0
+				}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"height": 180,
+				"width": null,
+				"touchEnabled": true,
+				"visible": true,
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"font": {},
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"direction": "INHERIT",
+					"alignContent": "STRETCH",
+					"alignItems": "STRETCH",
+					"justifyContent": "FLEX_START",
+					"flexWrap": "NOWRAP",
+					"flexDirection": "COLUMN",
+					"positionType": "RELATIVE"
+				},
+				"left": null,
+				"top": 0,
+				"marginBottom": 10,
+				"usePageVariable": true,
+				"name": "flCardAppointmentType",
+				"parent": "7197-031b-5d1e-6f45",
+				"children": []
+			}
+		}
+	]
+}
