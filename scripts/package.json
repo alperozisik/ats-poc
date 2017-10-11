@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@smartface/sf-calendar-component": "^1.3.6",
     "@smartface/styler": "^1.0.0",
     "js-base": "^1.0.0",
     "mixin-deep": "^1.2.0",

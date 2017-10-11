@@ -24,6 +24,7 @@ Router.add("pgLogin", require("./pages/pgLogin"), true);
 Router.add("pgFeed", require("./pages/pgFeed"));
 Router.add("pgDoctorAppointment", require("./pages/pgDoctorAppointment"));
 Router.add("pgBookAppointment", require("./pages/pgBookAppointment"));
+Router.add("pgBookAppointmentDate", require("./pages/pgBookAppointmentDate"));
 
 Router.go("pgLogin", {
     appStart: true

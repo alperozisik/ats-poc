@@ -1,0 +1,353 @@
+{
+	"components": [
+		{
+			"type": "Page",
+			"id": "d7d0-8ff4-63c6-96ff",
+			"initialized": true,
+			"themeProps": {
+				"Page": "Default"
+			},
+			"userProps": {
+				"paddingLeft": null,
+				"paddingRight": null,
+				"paddingTop": 10
+			},
+			"className": ".page",
+			"version": "6.5.1",
+			"props": {
+				"flexProps": {
+					"alignContent": "STRETCH",
+					"alignItems": "STRETCH",
+					"direction": "INHERIT",
+					"flexDirection": "COLUMN",
+					"flexWrap": "NOWRAP",
+					"justifyContent": "FLEX_START"
+				},
+				"backgroundColor": "#FFFFFF",
+				"font": {},
+				"orientation": "PORTRAIT",
+				"paddingLeft": null,
+				"paddingRight": null,
+				"paddingTop": 10,
+				"name": "pgBookAppointmentDate",
+				"parent": null,
+				"children": [
+					"8b9e-6044-77a1-4ebe",
+					"2e90-5704-350e-79c8",
+					"fa5e-2f83-9273-c860",
+					"8e4e-20b4-fd68-8a6b",
+					"ea90-d750-ad1c-55dc",
+					"8260-ba55-102d-323d",
+					"da22-b015-730a-d2c0",
+					"e5ea-84d3-4d1a-7f0d"
+				],
+				"width": 281.25,
+				"height": 452.25
+			}
+		},
+		{
+			"type": "StatusBar",
+			"id": "8b9e-6044-77a1-4ebe",
+			"themeProps": {
+				"StatusBar": "Default"
+			},
+			"userProps": {},
+			"className": ".statusBar",
+			"props": {
+				"color": "#104682",
+				"visible": true,
+				"font": {},
+				"flexProps": {},
+				"name": "statusBar",
+				"parent": "d7d0-8ff4-63c6-96ff",
+				"children": [],
+				"isRemovable": false
+			}
+		},
+		{
+			"type": "HeaderBar",
+			"id": "2e90-5704-350e-79c8",
+			"themeProps": {
+				"HeaderBar": "Default"
+			},
+			"userProps": {
+				"title": "Book Appointment Date"
+			},
+			"className": ".headerBar",
+			"props": {
+				"title": "Book Appointment Date",
+				"titleColor": "#000000",
+				"visible": true,
+				"backgroundColor": "#FFFFFF",
+				"font": {},
+				"flexProps": {},
+				"name": "headerBar",
+				"parent": "d7d0-8ff4-63c6-96ff",
+				"children": [],
+				"isRemovable": false
+			}
+		},
+		{
+			"type": "Label",
+			"id": "fa5e-2f83-9273-c860",
+			"themeProps": {
+				"Sizes": "Default"
+			},
+			"userProps": {
+				"usePageVariable": true,
+				"text": "Select Date",
+				"width": null,
+				"textAlignment": "MIDCENTER",
+				"textColor": "rgba( 155, 155, 155, 1 )",
+				"font": {
+					"size": 32
+				}
+			},
+			"className": ".label",
+			"props": {
+				"width": null,
+				"height": 70,
+				"touchEnabled": true,
+				"text": "Select Date",
+				"visible": true,
+				"multiline": false,
+				"backgroundColor": "#FFFFFF",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"textColor": "rgba( 155, 155, 155, 1 )",
+				"textAlignment": "MIDCENTER",
+				"font": {
+					"size": 32,
+					"bold": false,
+					"italic": false,
+					"family": "Arial"
+				},
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"positionType": "RELATIVE"
+				},
+				"usePageVariable": true,
+				"name": "lblSelectDate",
+				"parent": "d7d0-8ff4-63c6-96ff",
+				"children": []
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "8e4e-20b4-fd68-8a6b",
+			"themeProps": {
+				"Sizes": "Default"
+			},
+			"userProps": {
+				"usePageVariable": true,
+				"width": null,
+				"paddingLeft": 15,
+				"paddingRight": 15,
+				"height": 300
+			},
+			"className": ".flexLayout",
+			"props": {
+				"height": 300,
+				"width": null,
+				"touchEnabled": true,
+				"visible": true,
+				"backgroundColor": "#FFFFFF",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"font": {},
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"direction": "INHERIT",
+					"alignContent": "STRETCH",
+					"alignItems": "STRETCH",
+					"justifyContent": "FLEX_START",
+					"flexWrap": "NOWRAP",
+					"flexDirection": "COLUMN",
+					"positionType": "RELATIVE"
+				},
+				"usePageVariable": true,
+				"paddingLeft": 15,
+				"paddingRight": 15,
+				"name": "flCalendarPlaceholder",
+				"parent": "d7d0-8ff4-63c6-96ff",
+				"children": []
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "ea90-d750-ad1c-55dc",
+			"themeProps": {
+				"Sizes": "Default"
+			},
+			"userProps": {
+				"width": null,
+				"height": null,
+				"flexProps": {
+					"flexGrow": 1
+				}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"height": null,
+				"width": null,
+				"touchEnabled": true,
+				"visible": true,
+				"backgroundColor": "#FFFFFF",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"font": {},
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"direction": "INHERIT",
+					"alignContent": "STRETCH",
+					"alignItems": "STRETCH",
+					"justifyContent": "FLEX_START",
+					"flexWrap": "NOWRAP",
+					"flexDirection": "COLUMN",
+					"positionType": "RELATIVE",
+					"flexGrow": 1
+				},
+				"name": "flFreeSpace",
+				"parent": "d7d0-8ff4-63c6-96ff",
+				"children": []
+			}
+		},
+		{
+			"type": "Label",
+			"id": "8260-ba55-102d-323d",
+			"themeProps": {
+				"Sizes": "Default"
+			},
+			"userProps": {
+				"usePageVariable": true,
+				"text": "Selected",
+				"height": 28,
+				"width": null,
+				"textAlignment": "MIDCENTER",
+				"textColor": "rgba( 155, 155, 155, 1 )",
+				"font": {
+					"size": 24
+				}
+			},
+			"className": ".label",
+			"props": {
+				"width": null,
+				"height": 28,
+				"touchEnabled": true,
+				"text": "Selected",
+				"visible": true,
+				"multiline": false,
+				"backgroundColor": "#FFFFFF",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"textColor": "rgba( 155, 155, 155, 1 )",
+				"textAlignment": "MIDCENTER",
+				"font": {
+					"size": 24,
+					"bold": false,
+					"italic": false,
+					"family": "Arial"
+				},
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"positionType": "RELATIVE"
+				},
+				"usePageVariable": true,
+				"name": "lblSelectedCaption",
+				"parent": "d7d0-8ff4-63c6-96ff",
+				"children": []
+			}
+		},
+		{
+			"type": "Label",
+			"id": "da22-b015-730a-d2c0",
+			"themeProps": {
+				"Sizes": "Default"
+			},
+			"userProps": {
+				"textAlignment": "TOPCENTER",
+				"width": null,
+				"height": 30,
+				"text": null,
+				"usePageVariable": true,
+				"font": {
+					"size": 18
+				}
+			},
+			"className": ".label",
+			"props": {
+				"width": null,
+				"height": 30,
+				"touchEnabled": true,
+				"text": null,
+				"visible": true,
+				"multiline": false,
+				"backgroundColor": "#FFFFFF",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"textColor": "#000000",
+				"textAlignment": "TOPCENTER",
+				"font": {
+					"size": 18,
+					"bold": false,
+					"italic": false,
+					"family": "Arial"
+				},
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"positionType": "RELATIVE"
+				},
+				"usePageVariable": true,
+				"name": "lblSelectedDate",
+				"parent": "d7d0-8ff4-63c6-96ff",
+				"children": []
+			}
+		},
+		{
+			"type": "Button",
+			"id": "e5ea-84d3-4d1a-7f0d",
+			"themeProps": {
+				"Sizes": "Default",
+				"Highlights": "Default"
+			},
+			"userProps": {
+				"width": null,
+				"usePageVariable": true,
+				"text": "Book"
+			},
+			"className": ".button",
+			"props": {
+				"width": null,
+				"height": 70,
+				"touchEnabled": true,
+				"text": "Book",
+				"visible": true,
+				"backgroundColor": "#104682",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"textColor": "#FFFFFF",
+				"textAlignment": "MIDCENTER",
+				"font": {
+					"size": 16,
+					"bold": false,
+					"italic": false,
+					"family": "Arial"
+				},
+				"flexProps": {
+					"positionType": "RELATIVE",
+					"alignSelf": "AUTO"
+				},
+				"usePageVariable": true,
+				"name": "btnBook",
+				"parent": "d7d0-8ff4-63c6-96ff",
+				"children": []
+			}
+		}
+	]
+}

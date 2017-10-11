@@ -118,7 +118,6 @@ function onLoad(superOnLoad) {
         myPicker.show(okCallback, cancelCallback);
     };
 
-
     page.flCardDoctor.btnSelect.onPress = function() {
         var pickerOptions = {
             items: doctors
@@ -160,7 +159,6 @@ function onLoad(superOnLoad) {
         myPicker.show(okCallback, cancelCallback);
     };
 
-
     page.flCardAppointmentType.btnSelect.onPress = function() {
         var pickerOptions = {
             items: appointmentType
@@ -180,7 +178,9 @@ function onLoad(superOnLoad) {
         myPicker.show(okCallback, cancelCallback);
     };
 
-
+    page.btnNext.onPress = function() {
+        Router.go("pgBookAppointmentDate");
+    };
 }
 
 function cancelCallback() {}
