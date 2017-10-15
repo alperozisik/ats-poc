@@ -39,4 +39,29 @@ SMF.i18n.defineLanguage('tr', {
 	"later": "Sonra",
 	"updateFail": "Güncelleme başarısız oldu",
 	"updateIsInProgress": "Güncelleme sürüyor",
+
+	"pgLogin.lblTitle.text": "Hadi Başlayalım!",
+	"pgLogin.userNameLbl.text": "KULLANICI ADI",
+	"pgLogin.passwordLbl.text": "ŞİFRE",
+	"pgLogin.btnLogin.text": "Oturum Aç",
+	"pgLogin.headerBar.title": "Oturum Aç",
+
+	"pgFeed.headerBar.title": "Live Feed",
+
+	"pgDoctorAppointment.headerBar.title": "Details",
+	"pgDoctorAppointment.lblTitle.text": "Doctor's Appointment",
+	"pgDoctorAppointment.lblSubTitle.text": "This area will include the description of the appointment if any. We will mainly focus on the information provided by the web service",
+
+	"pgBookAppointmentDate.headerBar.title": "Book Appointment Date",
+	"pgBookAppointmentDate.lblSelectDate.text": "Select Date",
+	"pgBookAppointmentDate.lblSelectedCaption.text": "Selected",
+	"pgBookAppointmentDate.btnBook.text": "Book",
+
+	"pgBookAppointment.headerBar.title": "Book Appointment",
+	"pgBookAppointment.flCardDepartment.lblTitle.text": "Select Department",
+	"pgBookAppointment.flCardDoctor.lblTitle.text": "Select Doctor",
+	"pgBookAppointment.flCardAppointmentType.lblTitle.text": "Select Appointmnet Type",
+	"pgBookAppointment.flCardDepartment.btnSelect.text": "Select",
+	"pgBookAppointment.flCardDoctor.btnSelect.text": "Select",
+	"pgBookAppointment.flCardAppointmentType.btnSelect.text": "Select",
 });

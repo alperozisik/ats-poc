@@ -50,8 +50,8 @@
 				],
 				"parent": null,
 				"name": "pgLogin",
-				"width": 217.49999999999997,
-				"height": 386.85999999999996
+				"width": 157.5,
+				"height": 280.14
 			}
 		},
 		{
@@ -171,16 +171,17 @@
 				"text": "Get Started!",
 				"width": null,
 				"height": 70,
+				"layout": {},
+				"flex": {},
+				"defaults": {},
+				"usePageVariable": true,
 				"font": {
 					"size": 50,
 					"family": "Nunito"
 				},
 				"flexProps": {
 					"alignSelf": "STRETCH"
-				},
-				"layout": {},
-				"flex": {},
-				"defaults": {}
+				}
 			},
 			"className": ".label",
 			"props": {
@@ -206,9 +207,10 @@
 					"alignSelf": "STRETCH",
 					"positionType": "RELATIVE"
 				},
+				"usePageVariable": true,
 				"children": [],
 				"parent": "7430-e342-8c7c-2392",
-				"name": "headerIcon"
+				"name": "lblTitle"
 			}
 		},
 		{
@@ -245,7 +247,7 @@
 				"children": [],
 				"parent": "7430-e342-8c7c-2392",
 				"name": "imgLogo",
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/ats/ui-editor/img/ats_logo.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.58&brandModel=iPhone%207"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/ats/ui-editor/img/ats_logo.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.42&brandModel=iPhone%207"
 			}
 		},
 		{
@@ -308,6 +310,7 @@
 				"textAlignment": "MIDLEFT",
 				"textColor": "rgba( 160, 160, 160, 1 )",
 				"text": "USERNAME",
+				"usePageVariable": true,
 				"font": {
 					"size": 16,
 					"family": "Nunito",
@@ -341,7 +344,8 @@
 				},
 				"children": [],
 				"parent": "1aeb-caad-07d2-0fcc",
-				"name": "userNameLbl"
+				"name": "userNameLbl",
+				"usePageVariable": true
 			}
 		},
 		{
@@ -502,6 +506,7 @@
 				"textAlignment": "MIDLEFT",
 				"textColor": "rgba( 160, 160, 160, 1 )",
 				"text": "PASSWORD",
+				"usePageVariable": true,
 				"font": {
 					"size": 16,
 					"family": "Nunito"
@@ -533,7 +538,8 @@
 				},
 				"children": [],
 				"parent": "47cc-07a1-2a45-c430",
-				"name": "passwordLbl"
+				"name": "passwordLbl",
+				"usePageVariable": true
 			}
 		},
 		{

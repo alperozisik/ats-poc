@@ -15,6 +15,7 @@ SMF.i18n.defineLanguage('en', {
 	"networkError": "There has been a network error, please try again later",
 	"applicationError": "There has been an unhandled application error, please inform developers",
 	"delete": "Delete",
+
 	"permissionRequiredMessage": "In order to application to work properly following permissions are to be granted",
 	"permissionRequiredTitle": "Permissions required",
 	"checkingUpdate": "Checking for updates",
@@ -38,4 +39,29 @@ SMF.i18n.defineLanguage('en', {
 	"later": "Later",
 	"updateFail": "Update failed",
 	"updateIsInProgress": "Update is in progress",
+
+	"pgLogin.lblTitle.text": "Get Started!",
+	"pgLogin.userNameLbl.text": "USERNAME",
+	"pgLogin.passwordLbl.text": "PASSWORD",
+	"pgLogin.btnLogin.text": "Login",
+	"pgLogin.headerBar.title": "Login",
+
+	"pgFeed.headerBar.title": "Live Feed",
+
+	"pgDoctorAppointment.headerBar.title": "Details",
+	"pgDoctorAppointment.lblTitle.text": "Doctor's Appointment",
+	"pgDoctorAppointment.lblSubTitle.text": "This area will include the description of the appointment if any. We will mainly focus on the information provided by the web service",
+
+	"pgBookAppointmentDate.headerBar.title": "Book Appointment Date",
+	"pgBookAppointmentDate.lblSelectDate.text": "Select Date",
+	"pgBookAppointmentDate.lblSelectedCaption.text": "Selected",
+	"pgBookAppointmentDate.btnBook.text": "Book",
+
+	"pgBookAppointment.headerBar.title": "Book Appointment",
+	"pgBookAppointment.flCardDepartment.lblTitle.text": "Select Department",
+	"pgBookAppointment.flCardDoctor.lblTitle.text": "Select Doctor",
+	"pgBookAppointment.flCardAppointmentType.lblTitle.text": "Select Appointmnet Type",
+	"pgBookAppointment.flCardDepartment.btnSelect.text": "Select",
+	"pgBookAppointment.flCardDoctor.btnSelect.text": "Select",
+	"pgBookAppointment.flCardAppointmentType.btnSelect.text": "Select",
 });

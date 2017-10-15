@@ -1,3 +1,4 @@
+/*globals SMF, Device*/
 /* 
 	"lang" variable is required for things like system level error messages and alert button messages.
 	Current implementation tries to load the value found in the variable "Device.language".
@@ -7,7 +8,7 @@
 	Required for BC
 */
 global.lang = {};
-
+const dot = require('dot-object');
 SMF.i18n = {
 	currentLang: null,
 	defaultLang: 'en',
@@ -31,18 +32,36 @@ SMF.i18n = {
 				}
 				// In case default options did not work, pick the first one.
 				this.switchLanguage(languageCodes[0]);
-			} else {
+			}
+			else {
 				this.switchLanguage(this.defaultLang);
 			}
 		}
 		this.currentLang = languageCode;
 		global.lang = this.languageKV[languageCode];
+	},
+	bindLanguage: function(baseName, targetObject) {
+		const lang = global.lang;
+		var keys = Object.keys(lang);
+		var target = {};
+		target[baseName] = targetObject;
+		keys.forEach(key => {
+			if (key.startsWith(baseName + ".")) {
+				try {
+					let valueGiven = dot.pick(key, target);
+					let valueShouldBe = lang[key];
+					if (valueGiven != valueShouldBe) {
+						dot.set(key, valueShouldBe, target);
+					}
+				}
+				catch (ex) {}
+			}
+		});
+
 	}
 };
 
-require('i18n/de.js');
 require('i18n/en.js');
-require('i18n/fi.js');
 require('i18n/tr.js');
 
 SMF.i18n.switchLanguage(Device.language);
