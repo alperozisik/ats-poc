@@ -4,6 +4,8 @@ const PgLoginDesign = require('ui/ui_pgLogin');
 const fingerprint = require("sf-extension-utils").fingerprint;
 const Router = require('sf-core/router');
 const rau = require("sf-extension-utils").rau;
+const userService = require("../services/user");
+
 const PgLogin = extend(PgLoginDesign)(
     // Constructor
     function(_super) {
@@ -39,12 +41,12 @@ function onShow(superOnShow, data = {}) {
                     password = fingerprintResult.password;
                 if (!password)
                     return alert("password is required");
-                loginWithUserNameAndPassword(page.userNameInput.text, password, function(err) {
+                loginWithUserNameAndPassword(page.userNameInput.text, password, function(err, patientId) {
                     if (err)
                         return alert("Cannot login. Check user name and password. Or system is down");
                     fingerprintResult && fingerprintResult.success(); //Important!
                     Router.go('pgFeed', {
-                        //some data
+                        patientId
                     });
                 });
             }
@@ -53,7 +55,7 @@ function onShow(superOnShow, data = {}) {
             silent: false,
         });
     }
-    
+
     SMF.i18n.bindLanguage("pgLogin", page);
 }
 
@@ -66,8 +68,8 @@ function onLoad(superOnLoad) {
     superOnLoad();
 
     this.imgLogo.onTouchEnded = () => {
-        this.userNameInput.text = "annamiracle@template.com";
-        this.passwordInput.text = "12345";
+        this.userNameInput.text = "smartface";
+        this.passwordInput.text = "123456";
     };
 
     this.btnLogin.onPress = () => {
@@ -77,7 +79,19 @@ function onLoad(superOnLoad) {
 
 
 function loginWithUserNameAndPassword(username, password, callback) {
-    callback(null);
+
+    userService.login(username, password).then((patientId) => {
+        callback(null, patientId);
+    }).catch((err) => {
+        if(err.message) {
+            alert(err.message);
+        } else {
+            alert("cannot login");
+        }
+    });
+
+
+
     /*  Http.request({
         url: getTokenUrl,
         method: "POST",

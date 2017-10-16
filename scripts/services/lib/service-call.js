@@ -33,14 +33,19 @@ function setCommonHeaderValue(key, value) {
 
 function request(options) {
     return new Promise((resolve, reject) => {
-        http.request(mixinDeep({
+        var requestOptions = mixinDeep({
             url: baseUrl + options.path,
             headers: commonHeaders,
             method: "GET",
             onLoad: function(response) {
                 try {
                     bodyParser(response);
-                    resolve(response.body);
+                    if (typeof response.body.result === "string")
+                        response.body.result = parseInt(response.body.result, 10);
+                    if (response.body.result)
+                        resolve(response.body);
+                    else
+                        reject(response.body);
                 }
                 catch (ex) {
                     reject(ex);
@@ -50,7 +55,9 @@ function request(options) {
                 bodyParser(e);
                 reject(e);
             }
-        }, options));
+        }, options);
+        console.log(`request: ${JSON.stringify(requestOptions)}`);
+        http.request(requestOptions);
     });
 }
 
@@ -60,6 +67,7 @@ function bodyParser(response) {
     switch (true) {
         case !contentType.startsWith("image"):
             response.body = response.body.toString();
+            console.log(`body = ${response.body}`);
         case contentType === "application/json":
             response.body = JSON.parse(response.body);
             break;
