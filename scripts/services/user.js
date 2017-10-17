@@ -1,36 +1,39 @@
-const serviceCall = require("./lib/service-call");
+var serviceCall = require("./lib/service-call");
+const request = serviceCall.request;
+const mcs = require("../lib/mcs");
 const System = require('sf-core/device/system');
-const notificationService = require("./notification");
+
 Object.assign(exports, {
     login
 });
-const deviceCode = System.OS === "iOS" ? 1 : 2;
-const companyId = 1;
+const deviceType = System.OS;
 
-function login(nickname, password) {
+function login(username, password) {
     return new Promise((resolve, reject) => {
+        mcs.login({ username: "ats", password: "123qweASD" }, function(err) {
+            if (err)
+                reject(err);
+            else {
+                mcs.registerDeviceToken({ packageName: "io.smartface.ats", version: "1.0.0" }, function(err, result) {
+                    var reqOps = serviceCall.createRequestOptions(`patient/login`, {
+                        method: "POST",
+                        body: {
+                            username,
+                            password,
+                            deviceType
+                        }
+                    });
+                    if (!err)
+                        reqOps.notificationToken = result.notificationToken;
+                    request(reqOps).then((result) => {
+                        resolve(result.patientId);
+                    }).catch((err) => {
+                        reject(err);
+                    });
 
-        nickname = encodeURIComponent(nickname);
-        password = encodeURIComponent(password);
-        var tokenId = "null";
-
-        notificationService.getMostRecentToken().then((token) => {
-            tokenId = token;
-            callService(nickname, password, tokenId, resolve, reject);
-        }).catch((token) => {
-            tokenId = token;
-            callService(nickname, password, tokenId, resolve, reject);
+                });
+            }
         });
 
     });
-
-    function callService(nickname, password, tokenId, resolve, reject) {
-        serviceCall.request({
-            path: `/loginWS/login/${companyId}/${password}/${nickname}/${tokenId}/${deviceCode}`
-        }).then((userInfo) => {
-            resolve(userInfo);
-        }).catch((err) => {
-            reject(err);
-        });
-    }
 }

@@ -29,7 +29,7 @@ const PgFeed = extend(PgFeedDesign)(
  * @param {function} superOnShow super onShow function
  * @param {Object} parameters passed from Router.go function
  */
-function onShow(superOnShow) {
+function onShow(superOnShow, data = {}) {
     superOnShow();
     const page = this;
     fetchData.call(page);
@@ -54,6 +54,7 @@ function onShow(superOnShow) {
         });
         page.layout.addChild(page.fab);
     }
+    console.log(`patientId is = ${data.patientId}`);
 }
 
 /**

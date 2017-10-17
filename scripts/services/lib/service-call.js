@@ -1,15 +1,16 @@
 const Http = require("sf-core/net/http");
 const http = new Http();
 const mixinDeep = require('mixin-deep');
+const mcs = require("../../lib/mcs");
 const commonHeaders = {
-    "Accept": "application/json",
-    "Authorization": "Basic YXRzOmNhcmV3YXJlMTIz",
+    "Content-Type": "application/json; charset=utf-8",
+    "Accept": "application/json"
 };
-const baseUrl = "http://46.44.115.43:8989/careware/resources";
 
 Object.assign(exports, {
     request,
-    setCommonHeaderValue
+    setCommonHeaderValue,
+    createRequestOptions,
 });
 
 function setCommonHeaderValue(key, value) {
@@ -30,22 +31,25 @@ function setCommonHeaderValue(key, value) {
         throw Error("key must be string or object");
 }
 
+function createRequestOptions(endpointPath, options) {
+    var mcsRequestOptions = mcs.createRequestOptions({
+        apiName: "ats",
+        endpointPath
+    });
+    var requestOptions = mixinDeep(mcsRequestOptions, {
+        headers: commonHeaders
+    }, options || {});
+    return requestOptions;
+}
+
 
 function request(options) {
     return new Promise((resolve, reject) => {
         var requestOptions = mixinDeep({
-            url: baseUrl + options.path,
-            headers: commonHeaders,
-            method: "GET",
             onLoad: function(response) {
                 try {
                     bodyParser(response);
-                    if (typeof response.body.result === "string")
-                        response.body.result = parseInt(response.body.result, 10);
-                    if (response.body.result)
-                        resolve(response.body);
-                    else
-                        reject(response.body);
+                    resolve(response.body);
                 }
                 catch (ex) {
                     reject(ex);
@@ -56,6 +60,14 @@ function request(options) {
                 reject(e);
             }
         }, options);
+        if (requestOptions.body) {
+            if (requestOptions.method !== "GET") {
+                if (typeof requestOptions.body === "object")
+                    requestOptions.body = JSON.stringify(requestOptions.body);
+            }
+            else
+                delete requestOptions.body;
+        }
         console.log(`request: ${JSON.stringify(requestOptions)}`);
         http.request(requestOptions);
     });
