@@ -4,8 +4,9 @@ const mixinDeep = require('mixin-deep');
 const mcs = require("../../lib/mcs");
 const commonHeaders = {
     "Content-Type": "application/json; charset=utf-8",
-    "Accept": "application/json"
+    "Accept": "application/json; charset=utf-8"
 };
+const methodsWithoutBody = ["GET", "HEAD"];
 
 Object.assign(exports, {
     request,
@@ -60,14 +61,23 @@ function request(options) {
                 reject(e);
             }
         }, options);
-        if (requestOptions.body) {
-            if (requestOptions.method !== "GET") {
-                if (typeof requestOptions.body === "object")
-                    requestOptions.body = JSON.stringify(requestOptions.body);
-            }
-            else
+        if (methodsWithoutBody.indexOf(requestOptions.method) !== -1) {
+            if (requestOptions.body) {
                 delete requestOptions.body;
+            }
+            if (requestOptions.headers["Content-Type"])
+                delete requestOptions.headers["Content-Type"];
         }
+        else {
+            if (requestOptions.body && typeof requestOptions.body === "object" &&
+                requestOptions.headers["Content-Type"].startsWith("application/json")) {
+                requestOptions.body = JSON.stringify(requestOptions.body);
+            }
+        }
+
+
+
+
         console.log(`request: ${JSON.stringify(requestOptions)}`);
         http.request(requestOptions);
     });
