@@ -48,20 +48,20 @@ SMF.i18n.defineLanguage('tr', {
 
 	"pgFeed.headerBar.title": "Live Feed",
 
-	"pgDoctorAppointment.headerBar.title": "Details",
-	"pgDoctorAppointment.lblTitle.text": "Doctor's Appointment",
+	"pgDoctorAppointment.headerBar.title": "Detaylar",
+	"pgDoctorAppointment.lblTitle.text": "Doktor Randevusu",
 	"pgDoctorAppointment.lblSubTitle.text": "This area will include the description of the appointment if any. We will mainly focus on the information provided by the web service",
 
-	"pgBookAppointmentDate.headerBar.title": "Book Appointment Date",
-	"pgBookAppointmentDate.lblSelectDate.text": "Select Date",
-	"pgBookAppointmentDate.lblSelectedCaption.text": "Selected",
-	"pgBookAppointmentDate.btnBook.text": "Book",
+	"pgBookAppointmentDate.headerBar.title": "Randevu günü ayarla",
+	"pgBookAppointmentDate.lblSelectDate.text": "Gün seç",
+	"pgBookAppointmentDate.lblSelectedCaption.text": "Seçildi",
+	"pgBookAppointmentDate.btnBook.text": "Randevu al",
 
-	"pgBookAppointment.headerBar.title": "Book Appointment",
-	"pgBookAppointment.flCardDepartment.lblTitle.text": "Select Department",
-	"pgBookAppointment.flCardDoctor.lblTitle.text": "Select Doctor",
-	"pgBookAppointment.flCardAppointmentType.lblTitle.text": "Select Appointmnet Type",
-	"pgBookAppointment.flCardDepartment.btnSelect.text": "Select",
-	"pgBookAppointment.flCardDoctor.btnSelect.text": "Select",
-	"pgBookAppointment.flCardAppointmentType.btnSelect.text": "Select",
+	"pgBookAppointment.headerBar.title": "Randevu Al",
+	"pgBookAppointment.flCardDepartment.lblTitle.text": "Departman seç",
+	"pgBookAppointment.flCardDoctor.lblTitle.text": "Doktor seç",
+	"pgBookAppointment.flCardAppointmentType.lblTitle.text": "Randevu türü seç",
+	"pgBookAppointment.flCardDepartment.btnSelect.text": "Seç",
+	"pgBookAppointment.flCardDoctor.btnSelect.text": "Seç",
+	"pgBookAppointment.flCardAppointmentType.btnSelect.text": "Seç",
 });
