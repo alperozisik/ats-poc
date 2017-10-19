@@ -21,7 +21,7 @@ stylerBuilder.setActiveTheme(settings.config.theme.currentTheme);
 require("sf-extension-utils");
 // Define routes and go to initial page of application
 Router.add("pgLogin", require("./pages/pgLogin"), true);
-Router.add("pgFeed", require("./pages/pgFeed"));
+Router.add("pgFeed", require("./pages/pgFeed"), true);
 Router.add("pgDoctorAppointment", require("./pages/pgDoctorAppointment"));
 Router.add("pgBookAppointment", require("./pages/pgBookAppointment"));
 Router.add("pgBookAppointmentDate", require("./pages/pgBookAppointmentDate"));

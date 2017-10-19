@@ -33,23 +33,7 @@ function onShow(superOnShow, data = {}) {
             userNameTextBox: page.userNameInput,
             passwordTextBox: page.passwordInput,
             autoLogin: true,
-            callback: function(err, fingerprintResult) {
-                var password;
-                if (err)
-                    password = page.passwordInput.text;
-                else
-                    password = fingerprintResult.password;
-                if (!password)
-                    return alert("password is required");
-                loginWithUserNameAndPassword(page.userNameInput.text, password, function(err, patientId) {
-                    if (err)
-                        return alert("Cannot login. Check user name and password. Or system is down");
-                    fingerprintResult && fingerprintResult.success(); //Important!
-                    Router.go('pgFeed', {
-                        patientId
-                    });
-                });
-            }
+            callback: fingerprintCallback.bind(page)
         });
         rau.checkUpdate({
             silent: false,
@@ -78,34 +62,37 @@ function onLoad(superOnLoad) {
 }
 
 
+function fingerprintCallback(err, fingerprintResult) {
+    const page = this;
+    var password;
+    if (err)
+        password = page.passwordInput.text;
+    else
+        password = fingerprintResult.password;
+    if (!password)
+        return alert("password is required");
+    loginWithUserNameAndPassword(page.userNameInput.text, password, function(err, patientId) {
+        if (err)
+            return alert("Cannot login. Check user name and password. Or system is down");
+        fingerprintResult && fingerprintResult.success(); //Important!
+        Router.go('pgFeed', {
+            patientId
+        });
+    });
+}
+
 function loginWithUserNameAndPassword(username, password, callback) {
 
     userService.login(username, password).then((patientId) => {
         callback(null, patientId);
     }).catch((err) => {
-        if(err.message) {
+        if (err.message) {
             alert(err.message);
-        } else {
+        }
+        else {
             alert("cannot login");
         }
     });
-
-
-
-    /*  Http.request({
-        url: getTokenUrl,
-        method: "POST",
-        body: JSON.stringify({
-          username,
-          password
-        })
-      }, function(response) {
-        //handle response
-        callback(null); //to call .success
-      }, function(e) {
-        //invalid credentials?
-        callback(e);
-      });*/
 }
 
 module && (module.exports = PgLogin);

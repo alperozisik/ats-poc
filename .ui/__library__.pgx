@@ -34,8 +34,8 @@
 					"6222-8e08-4c3e-cbc9",
 					"42d8-c054-7638-f441"
 				],
-				"width": 292.5,
-				"height": 520.26
+				"width": 63.75000000000001,
+				"height": 113.39000000000001
 			}
 		},
 		{
@@ -451,6 +451,7 @@
 				"right": 0,
 				"top": 0,
 				"backgroundColor": "rgba( 155, 155, 155, 1 )",
+				"id": 1115,
 				"flexProps": {
 					"positionType": "ABSOLUTE"
 				}
@@ -481,7 +482,8 @@
 				"top": 0,
 				"name": "flTop",
 				"parent": "c86d-de10-3486-0556",
-				"children": []
+				"children": [],
+				"id": 1115
 			}
 		},
 		{
