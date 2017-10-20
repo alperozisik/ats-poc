@@ -57,7 +57,10 @@ function onShow(superOnShow, data = {}) {
         reachedToTheEnd: false
     };
     page.showDialog();
-    fetchData.call(page);
+    setTimeout(() => {
+        fetchData.call(page);
+    }, 450);
+    page.lvFeed.scrollTo(0);
 
     if (!page.fab) {
         let fabItems = [
@@ -145,29 +148,32 @@ function onLoad(superOnLoad) {
 
 function fetchData() {
     const page = this;
+    if (page.fetching)
+        return;
+    page.fetching = true;
 
-    setTimeout(() => {
-        userService.getTimeline(page.feedData.page + 1).then(result => {
-            if (result.page === page.feedData.page + 1) {
-                page.feedData.page = result.page;
-                page.feedData.items = page.feedData.items.concat(result.items);
-                page.feedData.items.sort(compareItems);
-                let lastItem = page.feedData.items[page.feedData.items.length - 1];
-                let lastItemPaging = Number(lastItem.paging);
-                if ((lastItemPaging - 1) % 5 !== 0)
-                    page.feedData.reachedToTheEnd = true;
-                loadData.call(page);
-            }
-            else {
+
+    userService.getTimeline(page.feedData.page + 1).then(result => {
+        page.fetching = false;
+        if (result.page === page.feedData.page + 1) {
+            page.feedData.page = result.page;
+            page.feedData.items = page.feedData.items.concat(result.items);
+            page.feedData.items.sort(compareItems);
+            let lastItem = page.feedData.items[page.feedData.items.length - 1];
+            let lastItemPaging = Number(lastItem.paging);
+            if ((lastItemPaging - 1) % 5 !== 0)
                 page.feedData.reachedToTheEnd = true;
-            }
-            page.hideDialog();
+            loadData.call(page);
+        }
+        else {
+            page.feedData.reachedToTheEnd = true;
+        }
+        page.hideDialog();
 
-        }).catch(err => {
-            //TODO: show alert?
-            page.hideDialog();
-        });
-    }, 450);
+    }).catch(err => {
+        //TODO: show alert?
+        page.hideDialog();
+    });
 
 }
 
