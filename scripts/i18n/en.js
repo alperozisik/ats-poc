@@ -16,7 +16,7 @@ SMF.i18n.defineLanguage('en', {
 	"applicationError": "There has been an unhandled application error, please inform developers",
 	"delete": "Delete",
 
-	"permissionRequiredMessage": "In order to application to work properly following permissions are to be granted",
+	"permissionRequiredMessage": "In order the application to work properly following permissions are to be granted",
 	"permissionRequiredTitle": "Permissions required",
 	"checkingUpdate": "Checking for updates",
 	"rauProfileError": "Update profile not found",
@@ -47,7 +47,7 @@ SMF.i18n.defineLanguage('en', {
 	"pgLogin.headerBar.title": "Login",
 
 	"pgFeed.headerBar.title": "Live Feed",
-	"pgFeed.flatingActionButton.0.title": "Book Appointmnet",
+	"pgFeed.flatingActionButton.0.title": "Book Appointment",
 
 	"pgDoctorAppointment.headerBar.title": "Details",
 	"pgDoctorAppointment.lblTitle.text": "Doctor's Appointment",
@@ -63,7 +63,7 @@ SMF.i18n.defineLanguage('en', {
 	"pgBookAppointment.flCardDepartment.lblTitle.text": "Select Department",
 	"pgBookAppointment.flCardDoctor.lblTitle.text": "Select Doctor",
 	"pgBookAppointment.flCardPeriod.lblTitle.text": "Select Period",
-	"pgBookAppointment.flCardAppointmentType.lblTitle.text": "Select Appointmnet Type",
+	"pgBookAppointment.flCardAppointmentType.lblTitle.text": "Select Appointment Type",
 	"cardSelect": "Select",
 
 });
