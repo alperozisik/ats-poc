@@ -47,6 +47,7 @@ SMF.i18n.defineLanguage('en', {
 	"pgLogin.headerBar.title": "Login",
 
 	"pgFeed.headerBar.title": "Live Feed",
+	"pgFeed.flatingActionButton.0.title": "Book Appointmnet",
 
 	"pgDoctorAppointment.headerBar.title": "Details",
 	"pgDoctorAppointment.lblTitle.text": "Doctor's Appointment",
@@ -60,8 +61,7 @@ SMF.i18n.defineLanguage('en', {
 	"pgBookAppointment.headerBar.title": "Book Appointment",
 	"pgBookAppointment.flCardDepartment.lblTitle.text": "Select Department",
 	"pgBookAppointment.flCardDoctor.lblTitle.text": "Select Doctor",
+	"pgBookAppointment.flCardPeriod.lblTitle.text": "Select Period",
 	"pgBookAppointment.flCardAppointmentType.lblTitle.text": "Select Appointmnet Type",
-	"pgBookAppointment.flCardDepartment.btnSelect.text": "Select",
-	"pgBookAppointment.flCardDoctor.btnSelect.text": "Select",
-	"pgBookAppointment.flCardAppointmentType.btnSelect.text": "Select",
+	"cardSelect": "Select",
 });

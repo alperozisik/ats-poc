@@ -7,28 +7,7 @@ const flCardPlaceHeight = (FlCardDesign.defaults.height || 0) + (FlCardDesign.de
 const Animator = require('sf-core/ui/animator');
 const System = require('sf-core/device/system');
 const Picker = require("sf-core/ui/picker");
-
-const departments = [
-    "Department A",
-    "Department B",
-    "Department C",
-    "Department D",
-    "Department E",
-];
-
-const doctors = [
-    "Doctor 1",
-    "Doctor 2",
-    "Doctor 3",
-    "Doctor 4",
-    "Doctor 5",
-];
-
-const appointmentType = [
-    "Appointment Type X",
-    "Appointment Type Y",
-    "Appointment Type Z",
-];
+const cardService = require("../services/cards");
 
 const PgBookAppointment = extend(PgBookAppointmentDesign)(
     // Constructor
@@ -38,9 +17,15 @@ const PgBookAppointment = extend(PgBookAppointmentDesign)(
         this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
         const page = this;
 
-        page.flCardDepartment.lblTitle.text = "Select Department";
-        page.flCardDoctor.lblTitle.text = "Select Doctor";
-        page.flCardAppointmentType.lblTitle.text = "Select Appointmnet Type";
+        page.cards = [
+            page.flCardDepartment,
+            page.flCardDoctor,
+            page.flCardAppointmentType,
+            page.flCardPeriod
+        ];
+        page.contextData = [];
+
+
     });
 
 /**
@@ -56,12 +41,37 @@ function onShow(superOnShow, data = {}) {
     if (data.new) {
         page.btnNext.height = 0;
         let svCardsPaddingTop = isNaN(page.svCards.layout.paddingTop) ? 20 : page.svCards.layout.paddingTop;
-        page.flCardDoctor.initialTop = (svCardsPaddingTop + flCardPlaceHeight * 2) * 1;
-        page.flCardAppointmentType.initialTop = (svCardsPaddingTop + flCardPlaceHeight * 3) * 1;
+        page.cards.forEach((card, index) => {
+            if (index === 0) {
+                card.initialTop = 0;
+            }
+            else {
+                card.initialTop = (svCardsPaddingTop + flCardPlaceHeight * (index + 1)) * 1;
+            }
+            card.top = card.initialTop;
+            card.cardList = page.cards;
+        });
 
-        page.flCardDoctor.top = page.flCardDoctor.initialTop;
-        page.flCardAppointmentType.top = page.flCardAppointmentType.initialTop;
+        page.flCardDepartment.name = "flCardDepartment";
+        page.flCardDoctor.name = "flCardDoctor";
+        page.flCardAppointmentType.name = "flCardAppointmentType";
+        page.flCardPeriod.name = "flCardPeriod";
+
+        page.flCardDepartment.servicePromise = cardService.getClinic;
+        page.flCardDoctor.servicePromise = cardService.getDoctorOfDepartments;
+        page.flCardAppointmentType.servicePromise = cardService.getAppointmentsCategories;
+        page.flCardPeriod.servicePromise = cardService.getAppointmentsPeriods;
+
+
+        console.log(`flCardDepartment has servicePromise? ${!!page.flCardDepartment.servicePromise}`);
+        console.log(`flCardDoctor has servicePromise? ${!!page.flCardDoctor.servicePromise}`);
+        console.log(`flCardAppointmentType has servicePromise? ${!!page.flCardAppointmentType.servicePromise}`);
+        console.log(`flCardPeriod has servicePromise? ${!!page.flCardPeriod.servicePromise}`);
+        setTimeout(() => { loadDataToCard(page.cards[0], page.contextData, page); }, 450);
+
         page.svCards.layout.applyLayout();
+
+        global.SMF.i18n.bindLanguage("pgBookAppointment", page);
     }
 }
 
@@ -76,113 +86,90 @@ function onLoad(superOnLoad) {
     page.headerBar.itemColor = Color.create("#104682");
     page.android.onBackButtonPressed = function() { Router.goBack() };
 
+    page.btnNext.onPress = function() {
+        Router.go("pgBookAppointmentDate");
+    };
+    page.cards.forEach((card, index) => {
+        card.btnSelect.onPress = cardSelect.bind(page, card, index);
+        card.servicePromise = null;
+        card.setButtonVisible(false);
+    });
+
+}
+
+function cardSelect(card, cardIndex) {
+    const page = this;
+    const cards = page.cards;
     const animationRootView = System.OS === "iOS" ? page.layout : page.svCards.layout;
-    page.flCardDepartment.btnSelect.onPress = function() {
-        var pickerOptions = {
-            items: departments
-        };
-        var index = departments.indexOf(page.flCardDepartment.btnSelect.text);
-        if (index !== -1)
-            pickerOptions.currentIndex = index;
-        var myPicker = new Picker(pickerOptions);
 
-        function okCallback(params) {
-            page.flCardDepartment.btnSelect.text = departments[params.index];
-            page.btnNext.height = 0;
-            var svCardsPaddingTop = isNaN(page.svCards.layout.paddingTop) ? 20 : page.svCards.layout.paddingTop;
-            page.flCardDoctor.top = svCardsPaddingTop + flCardPlaceHeight;
-            page.flCardDoctor.btnSelect.text = "Select";
-            page.flCardDoctor.alpha = 0.2;
-            page.flCardAppointmentType.top = page.flCardAppointmentType.initialTop;
+    var pickerOptions = {
+        items: card.data.texts
+    };
+    var pickerIndex = card.data.texts.indexOf(page.flCardDepartment.btnSelect.text);
+    if (pickerIndex !== -1)
+        pickerOptions.currentIndex = pickerIndex;
+    var myPicker = new Picker(pickerOptions);
+    var nextCard = cards[cardIndex + 1];
+    var futureCards = cards.slice(cardIndex + 2);
+
+    function okCallback(params) {
+        card.btnSelect.text = card.data.texts[params.index];
+        page.contextData[cardIndex] = card.data.full[params.index];
+        page.contextData.length = cardIndex + 1;
+        page.btnNext.height = 0;
+        var svCardsPaddingTop = isNaN(page.svCards.layout.paddingTop) ? 20 : page.svCards.layout.paddingTop;
+        futureCards.forEach(fCard => {
+            fCard.top = fCard.initialTop;
+        });
+        if (nextCard) {
+            nextCard.top = svCardsPaddingTop + flCardPlaceHeight;
+            nextCard.btnSelect.text = "Select";
+            nextCard.alpha = 0.2;
             Animator.animate(animationRootView, 250, function() {
-                page.flCardDoctor.top = -5;
-                page.flCardDoctor.alpha = 1;
+                nextCard.top = -5;
+                nextCard.alpha = 1;
             }).then(80, function() {
-                page.flCardDoctor.top = 4;
+                nextCard.top = 4;
             }).then(60, function() {
-                page.flCardDoctor.top = -4;
+                nextCard.top = -4;
             }).then(30, function() {
-                page.flCardDoctor.top = 3;
+                nextCard.top = 3;
             }).then(20, function() {
-                page.flCardDoctor.top = +3;
+                nextCard.top = +3;
             }).then(15, function() {
-                page.flCardDoctor.top = 2;
+                nextCard.top = 2;
             }).then(10, function() {
-                page.flCardDoctor.top = -2;
+                nextCard.top = -2;
             }).then(5, function() {
-                page.flCardDoctor.top = 1;
+                nextCard.top = 1;
             }).complete(function() {
-                page.flCardDoctor.top = 0;
+                loadDataToCard(nextCard, page.contextData, page);
+                nextCard.top = 0;
             });
         }
-        myPicker.show(okCallback, cancelCallback);
-    };
-
-    page.flCardDoctor.btnSelect.onPress = function() {
-        var pickerOptions = {
-            items: doctors
-        };
-        var index = doctors.indexOf(page.flCardDoctor.btnSelect.text);
-        if (index !== -1)
-            pickerOptions.currentIndex = index;
-        var myPicker = new Picker(pickerOptions);
-
-        function okCallback(params) {
-            page.flCardDoctor.btnSelect.text = doctors[params.index];
-            page.btnNext.height = 0;
-            var svCardsPaddingTop = isNaN(page.svCards.layout.paddingTop) ? 20 : page.svCards.layout.paddingTop;
-            page.flCardAppointmentType.top = svCardsPaddingTop + (flCardPlaceHeight * 2);
-            page.flCardAppointmentType.btnSelect.text = "Select";
-            page.flCardAppointmentType.alpha = 0.2;
-            // page.flCardAppointmentType.top = page.flCardAppointmentType.initialTop;
-            Animator.animate(animationRootView, 250, function() {
-                page.flCardAppointmentType.top = -5;
-                page.flCardAppointmentType.alpha = 1;
-            }).then(80, function() {
-                page.flCardAppointmentType.top = 4;
-            }).then(60, function() {
-                page.flCardAppointmentType.top = -4;
-            }).then(30, function() {
-                page.flCardAppointmentType.top = 3;
-            }).then(20, function() {
-                page.flCardAppointmentType.top = +3;
-            }).then(15, function() {
-                page.flCardAppointmentType.top = 2;
-            }).then(10, function() {
-                page.flCardAppointmentType.top = -2;
-            }).then(5, function() {
-                page.flCardAppointmentType.top = 1;
-            }).complete(function() {
-                page.flCardAppointmentType.top = 0;
-            });
-        }
-        myPicker.show(okCallback, cancelCallback);
-    };
-
-    page.flCardAppointmentType.btnSelect.onPress = function() {
-        var pickerOptions = {
-            items: appointmentType
-        };
-        var index = appointmentType.indexOf(page.flCardAppointmentType.btnSelect.text);
-        if (index !== -1)
-            pickerOptions.currentIndex = index;
-        var myPicker = new Picker(pickerOptions);
-
-        function okCallback(params) {
-            page.flCardAppointmentType.btnSelect.text = appointmentType[params.index];
-
+        else {
             Animator.animate(page.layout, 250, function() {
                 page.btnNext.height = 70;
             });
         }
-        myPicker.show(okCallback, cancelCallback);
-    };
-
-    page.btnNext.onPress = function() {
-        Router.go("pgBookAppointmentDate");
-    };
+    }
+    myPicker.show(okCallback, cancelCallback);
 }
 
 function cancelCallback() {}
+
+function loadDataToCard(card, contextData, page) {
+    card.setButtonVisible(false);
+    card.servicePromise && card.servicePromise(contextData).then(data => {
+        card.btnSelect.text = global.lang.cardSelect;
+        card.setButtonVisible(true);
+        card.data = data;
+    }).catch(err => {
+        //card.setButtonVisible(true);
+        console.log(`${card.name} data load error`);
+    });
+    page.svCards.layout.applyLayout();
+    console.log(`${card.name} has servicePromise? ${!!card.servicePromise}`);
+}
 
 module && (module.exports = PgBookAppointment);

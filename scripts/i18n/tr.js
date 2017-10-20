@@ -46,7 +46,8 @@ SMF.i18n.defineLanguage('tr', {
 	"pgLogin.btnLogin.text": "Oturum Aç",
 	"pgLogin.headerBar.title": "Oturum Aç",
 
-	"pgFeed.headerBar.title": "Live Feed",
+	"pgFeed.headerBar.title": "Canlı Akış",
+	"pgFeed.flatingActionButton.0.title": "Randevu ayarla",
 
 	"pgDoctorAppointment.headerBar.title": "Detaylar",
 	"pgDoctorAppointment.lblTitle.text": "Doktor Randevusu",
@@ -61,7 +62,7 @@ SMF.i18n.defineLanguage('tr', {
 	"pgBookAppointment.flCardDepartment.lblTitle.text": "Departman seç",
 	"pgBookAppointment.flCardDoctor.lblTitle.text": "Doktor seç",
 	"pgBookAppointment.flCardAppointmentType.lblTitle.text": "Randevu türü seç",
-	"pgBookAppointment.flCardDepartment.btnSelect.text": "Seç",
-	"pgBookAppointment.flCardDoctor.btnSelect.text": "Seç",
-	"pgBookAppointment.flCardAppointmentType.btnSelect.text": "Seç",
+	"pgBookAppointment.flCardPeriod.lblTitle.text": "Periyot Seç",
+	"cardSelect": "Seç",
+
 });

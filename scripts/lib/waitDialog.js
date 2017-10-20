@@ -11,7 +11,7 @@ Object.assign(waitDialog.layout, {
     backgroundColor: Color.create(60, 240, 240, 240),
     //alignContent: FlexLayout.AlignContent.CENTER,
     alignItems: FlexLayout.AlignItems.CENTER,
-    JustifyContent: FlexLayout.JustifyContent.CENTER,
+    justifyContent: FlexLayout.JustifyContent.CENTER,
     //height: Screen.height
 });
 

@@ -30,8 +30,8 @@
 					"7197-031b-5d1e-6f45",
 					"f272-ba1d-41c8-1045"
 				],
-				"width": 292.5,
-				"height": 470.34
+				"width": 198.75,
+				"height": 319.59
 			}
 		},
 		{
@@ -129,6 +129,7 @@
 				"name": "svCards",
 				"parent": "0f4f-3b03-090c-aa7d",
 				"children": [
+					"8933-df35-a909-0e3d",
 					"e830-906b-8be9-437a",
 					"5c45-1a46-777e-3665",
 					"a1fb-ed41-d572-ef80"
@@ -343,6 +344,63 @@
 				"marginBottom": 10,
 				"usePageVariable": true,
 				"name": "flCardAppointmentType",
+				"parent": "7197-031b-5d1e-6f45",
+				"children": []
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "8933-df35-a909-0e3d",
+			"hiddenComponent": false,
+			"source": {
+				"page": "__library__",
+				"type": "flCard",
+				"id": "42d8-c054-7638-f441"
+			},
+			"themeProps": {
+				"Sizes": "Default"
+			},
+			"userProps": {
+				"width": null,
+				"height": 180,
+				"left": null,
+				"top": 0,
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"marginBottom": 10,
+				"usePageVariable": true,
+				"flexProps": {
+					"positionType": "RELATIVE"
+				},
+				"flex": {
+					"positionType": 0
+				}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"height": 180,
+				"width": null,
+				"touchEnabled": true,
+				"visible": true,
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"font": {},
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"direction": "INHERIT",
+					"alignContent": "STRETCH",
+					"alignItems": "STRETCH",
+					"justifyContent": "FLEX_START",
+					"flexWrap": "NOWRAP",
+					"flexDirection": "COLUMN",
+					"positionType": "RELATIVE"
+				},
+				"left": null,
+				"top": 0,
+				"marginBottom": 10,
+				"usePageVariable": true,
+				"name": "flCardPeriod",
 				"parent": "7197-031b-5d1e-6f45",
 				"children": []
 			}

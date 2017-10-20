@@ -37,9 +37,6 @@ const PgFeed = extend(PgFeedDesign)(
             /*if (!page.feedData.reachedToTheEnd)
                 page.lvFeed.scrollTo(page.feedData.items.length - 1); //hides loading row*/
         };
-
-
-
     });
 
 /**
@@ -51,6 +48,7 @@ const PgFeed = extend(PgFeedDesign)(
 function onShow(superOnShow, data = {}) {
     superOnShow();
     const page = this;
+    !page.feedData && global.SMF.i18n.bindLanguage("pgFeed", page);
     page.feedData = {
         page: 0,
         items: [],
@@ -65,7 +63,7 @@ function onShow(superOnShow, data = {}) {
     if (!page.fab) {
         let fabItems = [
             new FloatingMenu.Item({
-                title: "Book Appointmnet",
+                title: global.lang["pgFeed.flatingActionButton.0.title"],
                 titleColor: Color.BLACK,
                 icon: Image.createFromFile("images://ic_date_range.png"),
                 color: Color.WHITE,
