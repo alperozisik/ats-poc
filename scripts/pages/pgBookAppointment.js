@@ -87,7 +87,14 @@ function onLoad(superOnLoad) {
     page.android.onBackButtonPressed = function() { Router.goBack() };
 
     page.btnNext.onPress = function() {
-        Router.go("pgBookAppointmentDate");
+        Router.go("pgBookAppointmentDate", {
+            contextData: {
+                clinicNo : page.contextData[0].clinicNo,
+                doctorId: page.contextData[1].resourceId,
+                categoryNo: page.contextData[2].categoryNo,
+                periodNo: page.contextData[3].periodNo
+            }
+        });
     };
     page.cards.forEach((card, index) => {
         card.btnSelect.onPress = cardSelect.bind(page, card, index);

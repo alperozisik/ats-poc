@@ -19,7 +19,7 @@ const settings = require("./settings.json");
 stylerBuilder.registerThemes(settings.config.theme.themes || "Defaults");
 stylerBuilder.setActiveTheme(settings.config.theme.currentTheme);
 require("sf-extension-utils");
-// Define routes and go to initial page of application
+
 Router.add("pgLogin", require("./pages/pgLogin"), true);
 Router.add("pgFeed", require("./pages/pgFeed"), true);
 Router.add("pgDoctorAppointment", require("./pages/pgDoctorAppointment"));
@@ -29,3 +29,11 @@ Router.add("pgBookAppointmentDate", require("./pages/pgBookAppointmentDate"));
 Router.go("pgLogin", {
     appStart: true
 });
+/**/
+/*
+Router.add("pgCalendar", require("./pages/pgCalendar"));
+Router.go("pgCalendar", {
+    appStart: true
+});
+
+/**/

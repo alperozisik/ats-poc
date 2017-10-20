@@ -55,8 +55,9 @@ SMF.i18n.defineLanguage('tr', {
 
 	"pgBookAppointmentDate.headerBar.title": "Randevu günü ayarla",
 	"pgBookAppointmentDate.lblSelectDate.text": "Gün seç",
-	"pgBookAppointmentDate.lblSelectedCaption.text": "Seçildi",
 	"pgBookAppointmentDate.btnBook.text": "Randevu al",
+	"pgBookAppointmentDate.btnPickTime.text": "Seç",
+	"pgBookAppointmentDate.lblTime.text": "Saat", //hour
 
 	"pgBookAppointment.headerBar.title": "Randevu Al",
 	"pgBookAppointment.flCardDepartment.lblTitle.text": "Departman seç",

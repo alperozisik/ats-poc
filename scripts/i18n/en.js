@@ -55,8 +55,9 @@ SMF.i18n.defineLanguage('en', {
 
 	"pgBookAppointmentDate.headerBar.title": "Book Appointment Date",
 	"pgBookAppointmentDate.lblSelectDate.text": "Select Date",
-	"pgBookAppointmentDate.lblSelectedCaption.text": "Selected",
-	"pgBookAppointmentDate.btnBook.text": "Book",
+	"pgBookAppointmentDate.btnBook.text": "Book", //apointment booking
+	"pgBookAppointmentDate.btnPickTime.text": "Select",
+	"pgBookAppointmentDate.lblTime.text": "Time", //hour
 
 	"pgBookAppointment.headerBar.title": "Book Appointment",
 	"pgBookAppointment.flCardDepartment.lblTitle.text": "Select Department",
@@ -64,4 +65,5 @@ SMF.i18n.defineLanguage('en', {
 	"pgBookAppointment.flCardPeriod.lblTitle.text": "Select Period",
 	"pgBookAppointment.flCardAppointmentType.lblTitle.text": "Select Appointmnet Type",
 	"cardSelect": "Select",
+
 });
