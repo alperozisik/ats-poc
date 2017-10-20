@@ -60,7 +60,7 @@ function onShow(superOnShow, data = {}) {
     setTimeout(() => {
         fetchData.call(page);
     }, 450);
-    page.lvFeed.scrollTo(0);
+    page.lvFeed.itemCount && page.lvFeed.scrollTo(0);
 
     if (!page.fab) {
         let fabItems = [
