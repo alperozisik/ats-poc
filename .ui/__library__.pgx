@@ -34,8 +34,8 @@
 					"6222-8e08-4c3e-cbc9",
 					"42d8-c054-7638-f441"
 				],
-				"width": 63.75000000000001,
-				"height": 113.39000000000001
+				"width": 198.75,
+				"height": 353.51
 			}
 		},
 		{
@@ -83,7 +83,7 @@
 		{
 			"type": "FlexLayout",
 			"id": "c86d-de10-3486-0556",
-			"hiddenComponent": true,
+			"hiddenComponent": false,
 			"source": {
 				"page": "__library__"
 			},
@@ -248,6 +248,7 @@
 				"text": "1 May 2017",
 				"id": 1111,
 				"marginBottom": 10,
+				"usePageVariable": true,
 				"flexProps": {
 					"alignSelf": "CENTER"
 				}
@@ -280,7 +281,8 @@
 				"marginBottom": 10,
 				"name": "lblDate",
 				"parent": "c86d-de10-3486-0556",
-				"children": []
+				"children": [],
+				"usePageVariable": true
 			}
 		},
 		{
@@ -298,6 +300,7 @@
 				"width": null,
 				"marginBottom": 5,
 				"id": 1112,
+				"usePageVariable": true,
 				"font": {
 					"size": 24
 				}
@@ -330,7 +333,8 @@
 				"id": 1112,
 				"name": "lblTitle",
 				"parent": "c86d-de10-3486-0556",
-				"children": []
+				"children": [],
+				"usePageVariable": true
 			}
 		},
 		{
@@ -349,6 +353,7 @@
 				"text": "Department of Hematology - Dr. Zubadi",
 				"marginBottom": 10,
 				"id": 1113,
+				"usePageVariable": true,
 				"font": {
 					"size": 18
 				}
@@ -381,7 +386,8 @@
 				"id": 1113,
 				"name": "lblSubtitle",
 				"parent": "c86d-de10-3486-0556",
-				"children": []
+				"children": [],
+				"usePageVariable": true
 			}
 		},
 		{
@@ -401,6 +407,7 @@
 				"text": "Your appointment is dated as 01/05/2017 at 06:00 pm with Dr. Zubadi At the Department of Hematology",
 				"height": 40,
 				"id": 1114,
+				"usePageVariable": true,
 				"font": {
 					"size": 16
 				}
@@ -432,7 +439,8 @@
 				"id": 1114,
 				"name": "lblDescription",
 				"parent": "c86d-de10-3486-0556",
-				"children": []
+				"children": [],
+				"usePageVariable": true
 			}
 		},
 		{
@@ -452,6 +460,7 @@
 				"top": 0,
 				"backgroundColor": "rgba( 155, 155, 155, 1 )",
 				"id": 1115,
+				"usePageVariable": true,
 				"flexProps": {
 					"positionType": "ABSOLUTE"
 				}
@@ -480,10 +489,11 @@
 				"left": 0,
 				"right": 0,
 				"top": 0,
+				"id": 1115,
 				"name": "flTop",
 				"parent": "c86d-de10-3486-0556",
 				"children": [],
-				"id": 1115
+				"usePageVariable": true
 			}
 		},
 		{
@@ -695,7 +705,7 @@
 		{
 			"type": "FlexLayout",
 			"id": "42d8-c054-7638-f441",
-			"hiddenComponent": false,
+			"hiddenComponent": true,
 			"source": {
 				"page": "__library__"
 			},

@@ -45,13 +45,13 @@
 					"7430-e342-8c7c-2392",
 					"1aeb-caad-07d2-0fcc",
 					"47cc-07a1-2a45-c430",
-					"700e-a89b-1509-bc5f",
+					"649e-655e-83e7-dcd8",
 					"f1a3-993a-cef2-d348"
 				],
 				"parent": null,
 				"name": "pgLogin",
-				"width": 157.5,
-				"height": 280.14
+				"width": 198.75,
+				"height": 353.51
 			}
 		},
 		{
@@ -247,7 +247,7 @@
 				"children": [],
 				"parent": "7430-e342-8c7c-2392",
 				"name": "imgLogo",
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/ats/ui-editor/img/ats_logo.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.42&brandModel=iPhone%207"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/ats/ui-editor/img/ats_logo.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.53&brandModel=iPhone%207?random=0.0872272692773014"
 			}
 		},
 		{
@@ -342,10 +342,10 @@
 					"alignSelf": "AUTO",
 					"positionType": "RELATIVE"
 				},
+				"usePageVariable": true,
 				"children": [],
 				"parent": "1aeb-caad-07d2-0fcc",
-				"name": "userNameLbl",
-				"usePageVariable": true
+				"name": "userNameLbl"
 			}
 		},
 		{
@@ -536,10 +536,10 @@
 					"alignSelf": "AUTO",
 					"positionType": "RELATIVE"
 				},
+				"usePageVariable": true,
 				"children": [],
 				"parent": "47cc-07a1-2a45-c430",
-				"name": "passwordLbl",
-				"usePageVariable": true
+				"name": "passwordLbl"
 			}
 		},
 		{
@@ -635,50 +635,6 @@
 				"children": [],
 				"parent": "47cc-07a1-2a45-c430",
 				"name": "passwordLine"
-			}
-		},
-		{
-			"type": "Button",
-			"id": "700e-a89b-1509-bc5f",
-			"themeProps": {
-				"Sizes": "Default",
-				"Highlights": "Default"
-			},
-			"userProps": {
-				"text": "Login",
-				"usePageVariable": true,
-				"width": null,
-				"font": {
-					"family": "Default"
-				}
-			},
-			"className": ".button",
-			"props": {
-				"width": null,
-				"height": 70,
-				"touchEnabled": true,
-				"text": "Login",
-				"visible": true,
-				"backgroundColor": "#104682",
-				"alpha": 1,
-				"borderColor": "rgba(0,0,0,1)",
-				"borderWidth": 0,
-				"textColor": "#FFFFFF",
-				"textAlignment": "MIDCENTER",
-				"font": {
-					"size": 16,
-					"bold": false,
-					"italic": false,
-					"family": "Default"
-				},
-				"flexProps": {
-					"positionType": "RELATIVE",
-					"alignSelf": "AUTO"
-				},
-				"usePageVariable": true,
-				"children": [],
-				"parent": "2252-0cc0-907a-043f",
-				"name": "btnLogin"
 			}
 		},
 		{
@@ -892,6 +848,148 @@
 				"children": [],
 				"parent": "47cc-07a1-2a45-c430",
 				"name": "forgotYourPasswordLbl"
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "649e-655e-83e7-dcd8",
+			"themeProps": {
+				"Sizes": "Default"
+			},
+			"userProps": {
+				"height": 70,
+				"width": null,
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"flexProps": {
+					"flexGrow": null
+				}
+			},
+			"className": ".flexLayout",
+			"props": {
+				"height": 70,
+				"width": null,
+				"touchEnabled": true,
+				"visible": true,
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"font": {},
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"direction": "INHERIT",
+					"alignContent": "STRETCH",
+					"alignItems": "STRETCH",
+					"justifyContent": "FLEX_START",
+					"flexWrap": "NOWRAP",
+					"flexDirection": "COLUMN",
+					"positionType": "RELATIVE",
+					"flexGrow": null
+				},
+				"name": "flLogin",
+				"parent": "2252-0cc0-907a-043f",
+				"children": [
+					"9a9e-e5e2-38cb-6f10",
+					"9dcc-99f7-7164-0cc1"
+				]
+			}
+		},
+		{
+			"type": "Button",
+			"id": "9a9e-e5e2-38cb-6f10",
+			"themeProps": {
+				"Sizes": "Default",
+				"Highlights": "Default"
+			},
+			"userProps": {
+				"text": "Login",
+				"usePageVariable": true,
+				"width": null,
+				"left": 0,
+				"top": 0,
+				"height": null,
+				"font": {
+					"family": "Default"
+				},
+				"flexProps": {
+					"flexGrow": 1
+				}
+			},
+			"className": ".button",
+			"props": {
+				"width": null,
+				"height": null,
+				"touchEnabled": true,
+				"text": "Login",
+				"visible": true,
+				"backgroundColor": "#104682",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"textColor": "#FFFFFF",
+				"textAlignment": "MIDCENTER",
+				"font": {
+					"size": 16,
+					"bold": false,
+					"italic": false,
+					"family": "Default"
+				},
+				"flexProps": {
+					"positionType": "RELATIVE",
+					"alignSelf": "AUTO",
+					"flexGrow": 1
+				},
+				"usePageVariable": true,
+				"children": [],
+				"parent": "649e-655e-83e7-dcd8",
+				"name": "btnLogin",
+				"left": 0,
+				"top": 0
+			}
+		},
+		{
+			"type": "ActivityIndicator",
+			"id": "9dcc-99f7-7164-0cc1",
+			"themeProps": {
+				"Sizes": "Default"
+			},
+			"userProps": {
+				"usePageVariable": true,
+				"height": 42,
+				"color": "rgba( 255, 255, 255, 1 )",
+				"bottom": 14,
+				"top": 14,
+				"left": 20,
+				"visible": false,
+				"flexProps": {
+					"positionType": "ABSOLUTE"
+				}
+			},
+			"className": ".activityIndicator",
+			"props": {
+				"touchEnabled": true,
+				"width": 42,
+				"height": 42,
+				"color": "rgba( 255, 255, 255, 1 )",
+				"visible": false,
+				"backgroundColor": "rgba(0,0,0,0)",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"font": {},
+				"flexProps": {
+					"positionType": "ABSOLUTE",
+					"alignSelf": "AUTO"
+				},
+				"minHeight": 21,
+				"minWidth": 21,
+				"name": "aiLogin",
+				"parent": "649e-655e-83e7-dcd8",
+				"children": [],
+				"usePageVariable": true,
+				"bottom": 14,
+				"top": 14,
+				"left": 20
 			}
 		}
 	]

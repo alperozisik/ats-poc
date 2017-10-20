@@ -5,6 +5,7 @@ const fingerprint = require("sf-extension-utils").fingerprint;
 const Router = require('sf-core/router');
 const rau = require("sf-extension-utils").rau;
 const userService = require("../services/user");
+const appData = require("../lib/appData");
 
 const PgLogin = extend(PgLoginDesign)(
     // Constructor
@@ -41,6 +42,9 @@ function onShow(superOnShow, data = {}) {
     }
 
     SMF.i18n.bindLanguage("pgLogin", page);
+
+    appData.patientId = null;
+    page.aiLogin.visible = false;
 }
 
 /**
@@ -71,7 +75,11 @@ function fingerprintCallback(err, fingerprintResult) {
         password = fingerprintResult.password;
     if (!password)
         return alert("password is required");
+    page.aiLogin.visible = true;
+    page.btnLogin.enabled = false;
     loginWithUserNameAndPassword(page.userNameInput.text, password, function(err, patientId) {
+        page.aiLogin.visible = false;
+        page.btnLogin.enabled = true;
         if (err)
             return alert("Cannot login. Check user name and password. Or system is down");
         fingerprintResult && fingerprintResult.success(); //Important!

@@ -1,10 +1,15 @@
+/*globals Device */
 const Http = require("sf-core/net/http");
 const http = new Http();
 const mixinDeep = require('mixin-deep');
 const mcs = require("../../lib/mcs");
+//const System = require('sf-core/device/system');
+var lang =  Device.language;//System.language.subStr(0, 2);
+lang = lang === "ar" ? "ar" : "en";
 const commonHeaders = {
     "Content-Type": "application/json; charset=utf-8",
-    "Accept": "application/json; charset=utf-8"
+    "Accept": "application/json; charset=utf-8",
+    "language": lang
 };
 const methodsWithoutBody = ["GET", "HEAD"];
 

@@ -10,6 +10,9 @@ const Color = require('sf-core/ui/color');
 const FloatingMenu = require("sf-core/ui/floatingmenu");
 const Image = require("sf-core/ui/image");
 const mainColor = Color.create("#104682");
+const waitDialog = require("../lib/waitDialog");
+const userService = require("../services/user");
+
 const PgFeed = extend(PgFeedDesign)(
     // Constructor
     function(_super) {
@@ -17,7 +20,23 @@ const PgFeed = extend(PgFeedDesign)(
         this.onShow = onShow.bind(this, this.onShow.bind(this));
         this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
 
-
+        const page = this;
+        page.showDialog = () => {
+            if (!page.lvFeed.visible)
+                return;
+            waitDialog.show();
+            page.lvFeed.visible = false;
+            page.fab && (page.fab.visible = false);
+        };
+        page.hideDialog = () => {
+            if (page.lvFeed.visible)
+                return;
+            waitDialog.hide();
+            page.lvFeed.visible = true;
+            page.fab && (page.fab.visible = true);
+            /*if (!page.feedData.reachedToTheEnd)
+                page.lvFeed.scrollTo(page.feedData.items.length - 1); //hides loading row*/
+        };
 
 
 
@@ -32,6 +51,12 @@ const PgFeed = extend(PgFeedDesign)(
 function onShow(superOnShow, data = {}) {
     superOnShow();
     const page = this;
+    page.feedData = {
+        page: 0,
+        items: [],
+        reachedToTheEnd: false
+    };
+    page.showDialog();
     fetchData.call(page);
 
     if (!page.fab) {
@@ -74,7 +99,7 @@ function onLoad(superOnLoad) {
     // lvFeed.rowHeight = Math.max(FeedItemDesign.defaults.designHeight, ListViewLoadItemDesign.defaults.designHeight);
 
     lvFeed.onRowHeight = function(index) {
-        var height = index === page.feedData.length ?
+        var height = index === page.feedData.items.length ?
             ListViewLoadItemDesign.defaults.designHeight : FeedItemDesign.defaults.designHeight;
         return height;
     };
@@ -89,20 +114,30 @@ function onLoad(superOnLoad) {
     };
 
     lvFeed.onRowBind = function(listViewItem, index) {
-        var lastRow = index === page.feedData.length;
+        var lastRow = index === page.feedData.items.length;
         var feedItem = listViewItem.findChildById(1110);
         var listViewLoadItem = listViewItem.findChildById(1010);
         feedItem.visible = !lastRow;
         listViewLoadItem.visible = lastRow;
         listViewLoadItem.activityIndicator.visible = lastRow;
+        if (!lastRow) {
+            feedItem.bindData(page.feedData.items[index]);
+        }
+        else {
+            fetchData.call(page);
+        }
     };
 
     lvFeed.onRowSelected = function(listViewItem, index) {
-        var lastRow = index === page.feedData.length;
+        var lastRow = index === page.feedData.items.length;
         if (lastRow)
             return;
+        var data;
+        page.feedData.items[index];
+        if (!data.orderNo)
+            return;
         Router.go("pgDoctorAppointment", {
-            data: page.feedData[index],
+            data,
             chart: true
         });
     };
@@ -112,18 +147,47 @@ function fetchData() {
     const page = this;
 
     setTimeout(() => {
-        page.feedData = [];
-        page.feedData.length = 10;
-        loadData.call(page);
+        userService.getTimeline(page.feedData.page + 1).then(result => {
+            if (result.page === page.feedData.page + 1) {
+                page.feedData.page = result.page;
+                page.feedData.items = page.feedData.items.concat(result.items);
+                page.feedData.items.sort(compareItems);
+                let lastItem = page.feedData.items[page.feedData.items.length - 1];
+                let lastItemPaging = Number(lastItem.paging);
+                if ((lastItemPaging - 1) % 5 !== 0)
+                    page.feedData.reachedToTheEnd = true;
+                loadData.call(page);
+            }
+            else {
+                page.feedData.reachedToTheEnd = true;
+            }
+            page.hideDialog();
+
+        }).catch(err => {
+            //TODO: show alert?
+            page.hideDialog();
+        });
     }, 450);
 
 }
 
 function loadData() {
     const page = this;
-    page.lvFeed.itemCount = page.feedData.length + 1; // added for load item
-    page.lvFeed.refreshData();
 
+    var itemCount = page.feedData.items.length;
+    if (!page.feedData.reachedToTheEnd)
+        itemCount++; // added for load item
+    page.lvFeed.itemCount = itemCount;
+    page.lvFeed.refreshData();
 }
+
+function compareItems(a, b) {
+    return Number(a.paging) - Number(b.paging);
+}
+/*
+function isLastRow(page, index) {
+    page.feedData.reachedToTheEnd
+}*/
+
 
 module && (module.exports = PgFeed);

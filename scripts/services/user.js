@@ -2,9 +2,11 @@ var serviceCall = require("./lib/service-call");
 const request = serviceCall.request;
 const mcs = require("../lib/mcs");
 const System = require('sf-core/device/system');
+const appData = require("../lib/appData");
 
 Object.assign(exports, {
-    login
+    login,
+    getTimeline
 });
 const deviceType = System.OS;
 
@@ -23,9 +25,12 @@ function login(username, password) {
                             deviceType
                         }
                     });
-                    if (!err)
+                    if (!err) {
                         reqOps.notificationToken = result.notificationToken;
+                        appData.notificationToken = result.notificationToken;
+                    }
                     request(reqOps).then((result) => {
+                        appData.patientId = result.patientId;
                         resolve(result.patientId);
                     }).catch((err) => {
                         reject(err);
@@ -35,5 +40,18 @@ function login(username, password) {
             }
         });
 
+    });
+}
+
+function getTimeline(page = 1) {
+    return new Promise((resolve, reject) => {
+        var reqOps = serviceCall.createRequestOptions(`patient/${appData.patientId}/timeline?page=${page}`, {
+            method: "GET"
+        });
+        request(reqOps).then((result) => {
+            resolve(result);
+        }).catch((err) => {
+            reject(err);
+        });
     });
 }
