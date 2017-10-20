@@ -135,8 +135,7 @@ function onLoad(superOnLoad) {
         var lastRow = index === page.feedData.items.length;
         if (lastRow)
             return;
-        var data;
-        page.feedData.items[index];
+        var data = page.feedData.items[index];
         if (!data.orderNo)
             return;
         Router.go("pgDoctorAppointment", {
