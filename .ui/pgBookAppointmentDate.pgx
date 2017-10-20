@@ -38,10 +38,10 @@
 					"8e4e-20b4-fd68-8a6b",
 					"8ee5-5e83-b528-caa9",
 					"ea90-d750-ad1c-55dc",
-					"e5ea-84d3-4d1a-7f0d"
+					"af10-ef7a-42d5-acea"
 				],
-				"width": 187.5,
-				"height": 301.5
+				"width": 232.5,
+				"height": 373.86
 			}
 		},
 		{
@@ -217,47 +217,6 @@
 			}
 		},
 		{
-			"type": "Button",
-			"id": "e5ea-84d3-4d1a-7f0d",
-			"themeProps": {
-				"Sizes": "Default",
-				"Highlights": "Default"
-			},
-			"userProps": {
-				"width": null,
-				"usePageVariable": true,
-				"text": "Book"
-			},
-			"className": ".button",
-			"props": {
-				"width": null,
-				"height": 70,
-				"touchEnabled": true,
-				"text": "Book",
-				"visible": true,
-				"backgroundColor": "#104682",
-				"alpha": 1,
-				"borderColor": "rgba(0,0,0,1)",
-				"borderWidth": 0,
-				"textColor": "#FFFFFF",
-				"textAlignment": "MIDCENTER",
-				"font": {
-					"size": 16,
-					"bold": false,
-					"italic": false,
-					"family": "Arial"
-				},
-				"flexProps": {
-					"positionType": "RELATIVE",
-					"alignSelf": "AUTO"
-				},
-				"usePageVariable": true,
-				"name": "btnBook",
-				"parent": "d7d0-8ff4-63c6-96ff",
-				"children": []
-			}
-		},
-		{
 			"type": "FlexLayout",
 			"id": "7136-12a0-5d32-9eba",
 			"themeProps": {
@@ -383,6 +342,7 @@
 				},
 				"paddingLeft": 10,
 				"paddingRight": 10,
+				"usePageVariable": true,
 				"name": "flTimePick",
 				"parent": "d7d0-8ff4-63c6-96ff",
 				"children": [
@@ -390,8 +350,7 @@
 					"b2e9-e6b7-9ad2-17f4",
 					"ec43-e6c9-a53b-c0fc",
 					"a359-845f-a876-6457"
-				],
-				"usePageVariable": true
+				]
 			}
 		},
 		{
@@ -629,6 +588,89 @@
 				"name": "aiWaitTime",
 				"parent": "a359-845f-a876-6457",
 				"children": []
+			}
+		},
+		{
+			"type": "FlexLayout",
+			"id": "af10-ef7a-42d5-acea",
+			"themeProps": {
+				"Sizes": "Default"
+			},
+			"userProps": {
+				"width": null,
+				"height": 70
+			},
+			"className": ".flexLayout",
+			"props": {
+				"height": 70,
+				"width": null,
+				"touchEnabled": true,
+				"visible": true,
+				"backgroundColor": "#FFFFFF",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"font": {},
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"direction": "INHERIT",
+					"alignContent": "STRETCH",
+					"alignItems": "STRETCH",
+					"justifyContent": "FLEX_START",
+					"flexWrap": "NOWRAP",
+					"flexDirection": "COLUMN",
+					"positionType": "RELATIVE"
+				},
+				"name": "flBookButtonContainer",
+				"parent": "d7d0-8ff4-63c6-96ff",
+				"children": [
+					"9c47-d5c6-6328-57b4"
+				]
+			}
+		},
+		{
+			"type": "Button",
+			"id": "9c47-d5c6-6328-57b4",
+			"themeProps": {
+				"Sizes": "Default",
+				"Highlights": "Default"
+			},
+			"userProps": {
+				"width": null,
+				"usePageVariable": true,
+				"text": "Book",
+				"left": 0,
+				"top": 0
+			},
+			"className": ".button",
+			"props": {
+				"width": null,
+				"height": 70,
+				"touchEnabled": true,
+				"text": "Book",
+				"visible": true,
+				"backgroundColor": "#104682",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"textColor": "#FFFFFF",
+				"textAlignment": "MIDCENTER",
+				"font": {
+					"size": 16,
+					"bold": false,
+					"italic": false,
+					"family": "Arial"
+				},
+				"flexProps": {
+					"positionType": "RELATIVE",
+					"alignSelf": "AUTO"
+				},
+				"usePageVariable": true,
+				"name": "btnBook",
+				"parent": "af10-ef7a-42d5-acea",
+				"children": [],
+				"left": 0,
+				"top": 0
 			}
 		}
 	]

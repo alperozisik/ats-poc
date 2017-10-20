@@ -20,6 +20,12 @@ stylerBuilder.registerThemes(settings.config.theme.themes || "Defaults");
 stylerBuilder.setActiveTheme(settings.config.theme.currentTheme);
 require("sf-extension-utils");
 
+Application.onReceivedNotification = function(e) {
+    console.log("Notification: " + typeof e);
+    console.log("Notification: " + JSON.stringify(e.remote));
+};
+
+
 Router.add("pgLogin", require("./pages/pgLogin"), true);
 Router.add("pgFeed", require("./pages/pgFeed"), true);
 Router.add("pgDoctorAppointment", require("./pages/pgDoctorAppointment"));

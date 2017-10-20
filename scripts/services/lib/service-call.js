@@ -62,6 +62,8 @@ function request(options) {
                 }
             },
             onError: function(e) {
+                e.headers = e.headers || {};
+                e.body = e.body || "";
                 bodyParser(e);
                 reject(e);
             }

@@ -8,6 +8,8 @@ const Animator = require('sf-core/ui/animator');
 const appointmentService = require("../services/appointment");
 const Color = require('sf-core/ui/color');
 const Picker = require("sf-core/ui/picker");
+const waitDialog = require("../lib/waitDialog");
+const System = require('sf-core/device/system');
 
 const PgBookAppointmentDate = extend(PgBookAppointmentDateDesign)(
     // Constructor
@@ -60,7 +62,7 @@ const PgBookAppointmentDate = extend(PgBookAppointmentDateDesign)(
                 page.calendar.setDate({ month: date.date.month, year: date.date.year });
                 page.flTimePick.visible = false;
                 hideBookButton(page);
-                
+
                 return;
             }
             if (!page.dateSelected) { //first time date selected in page
@@ -103,6 +105,11 @@ function onShow(superOnShow, data = {}) {
     }, 450);
     page.flWait.visible = true;
     page.btnPickTime.visible = false;
+    page.layout.applyLayout();
+
+    /*System.OS === "iOS" && Animator.animate(page.layout, 100, function() {
+        page.btnBook.height = 0.5;
+    }).complete(function() { page.btnBook.height = 0; });*/
 
 }
 
@@ -118,11 +125,25 @@ function onLoad(superOnLoad) {
     page.btnBook.height = 0;
 
     page.btnBook.onPress = function() {
-        Router.goBack("pgFeed");
+        waitDialog.show();
+        appointmentService.bookAppointment(
+            page.data.doctorId,
+            page.data.slotSerial,
+            page.data.categoryNo
+        ).then(result => {
+
+            waitDialog.hide();
+            Router.goBack("pgFeed");
+        }).catch(err => {
+            waitDialog.hide();
+            if (err.message)
+                alert(err.message);
+        });
     };
 
+
     page.flTimePick.visible = false;
-    
+
 }
 
 function setAvailableDates(year, month) {

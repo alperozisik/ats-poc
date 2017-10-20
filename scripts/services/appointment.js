@@ -6,6 +6,7 @@ const appData = require("../lib/appData");
 Object.assign(exports, {
     getAppointmentCount,
     getSlotTime,
+    bookAppointment
 });
 
 
@@ -36,6 +37,32 @@ function getSlotTime(doctorId, period, date) {
             };
             result.forEach(item => data.texts.push(`${item.slotTimeFrom}-${item.slotTimeTo} (${item.periodDesc})`));
             resolve(data);
+        }).catch((err) => {
+            reject(err);
+        });
+    });
+}
+
+function bookAppointment(doctorId, slotSerial, categorycode) {
+    var patientId = appData.patientId;
+
+    var body = {
+        doctorId,
+        slotSerial,
+        categorycode,
+        patientId
+    };
+    
+    if(appData.notificationToken)
+        body.notificationToken = appData.notificationToken;
+
+    return new Promise((resolve, reject) => {
+        var reqOps = serviceCall.createRequestOptions(`/appointment`, {
+            method: "POST",
+            body
+        });
+        request(reqOps).then((result) => {
+            resolve(result);
         }).catch((err) => {
             reject(err);
         });
