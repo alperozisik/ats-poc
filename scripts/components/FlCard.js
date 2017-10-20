@@ -39,29 +39,19 @@ const FlCard = extend(FlCardDesign)(
     flCard.flShadowLeft.backgroundColor = shadowColorLeft;
     flCard.flShadowBottom.backgroundColor = shadowColorBottom;
     flCard.flShadowLeftCorner.backgroundColor = shadowColorLeftCorner;
-    var aiLoadRemoved = false;
-    var btnSelectRemoved = false;
 
     flCard.setButtonVisible = function(value) {
       if (value) {
-        if (!aiLoadRemoved) {
-          flCard.flAction.removeChild(flCard.aiLoad);
-          aiLoadRemoved = true;
-        }
-        if (btnSelectRemoved) {
-          flCard.flAction.addChild(flCard.btnSelect);
-          btnSelectRemoved = false;
-        }
+        flCard.btnSelect.visible = true;
+        flCard.btnSelect.height = 70;
+        flCard.aiLoad.visible = false;
+        flCard.aiLoad.height = 0;
       }
       else {
-        if (!btnSelectRemoved) {
-          flCard.flAction.removeChild(flCard.btnSelect);
-          btnSelectRemoved = true;
-        }
-        if (aiLoadRemoved) {
-          flCard.flAction.addChild(flCard.aiLoad);
-          aiLoadRemoved = false;
-        }
+        flCard.btnSelect.visible = false;
+        flCard.btnSelect.height = 0;
+        flCard.aiLoad.visible = true;
+        flCard.aiLoad.height = 42;
       }
       flCard.applyLayout();
     };
