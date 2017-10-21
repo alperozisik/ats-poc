@@ -21,8 +21,7 @@ stylerBuilder.setActiveTheme(settings.config.theme.currentTheme);
 require("sf-extension-utils");
 
 Application.onReceivedNotification = function(e) {
-    console.log("Notification: " + typeof e);
-    console.log("Notification: " + JSON.stringify(e.remote));
+    e && e.remote && alert("Notification: " + JSON.stringify(e.remote), "Notification recieved");
 };
 
 

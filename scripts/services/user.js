@@ -16,7 +16,13 @@ function login(username, password) {
             if (err)
                 reject(err);
             else {
-                mcs.registerDeviceToken({ packageName: "io.smartface.ats", version: "1.0.0" }, function(err, result) {
+                mcs.registerDeviceToken({ packageName: "io.smartface.fibabanka", version: "1.0.0" }, function(err, result) {
+                    if (typeof result === "string") {
+                        try {
+                            result = JSON.parse(result);
+                        }
+                        catch (ex) {}
+                    }
                     var reqOps = serviceCall.createRequestOptions(`patient/login`, {
                         method: "POST",
                         body: {
@@ -25,9 +31,9 @@ function login(username, password) {
                             deviceType
                         }
                     });
-                    if (!err) {
-                        reqOps.notificationToken = result.notificationToken;
-                        appData.notificationToken = result.notificationToken;
+                    if (!err || mcs.notificationToken) {
+                        reqOps.body.notificationToken = result.notificationToken || mcs.notificationToken;
+                        appData.notificationToken = result.notificationToken || mcs.notificationToken;
                     }
                     request(reqOps).then((result) => {
                         appData.patientId = result.patientId;

@@ -13,6 +13,7 @@ const FeedItem = extend(FeedItemDesign)(function(_super, props, pageName) {
     feedItem.bindData = function bindData(data) {
         // reDate.lastIndex = 0;
         // var dateArray = reDate.exec(data.actionDate.split(" ")[0]);
+        data.actionDate = data.actionDate || "";
         var actionDate = data.actionDate.split(" ");
         feedItem.lblDate.text = actionDate.length > 0 ? actionDate[0] : "";
         feedItem.lblTitle.text = String(data.categoryDesc);
