@@ -57,7 +57,8 @@ const PgBookAppointmentDate = extend(PgBookAppointmentDateDesign)(
 
         calendar.onDaySelect = function(date) {
             hideBookButton(page);
-
+            page.lblTime.text = global.lang["pgBookAppointmentDate.lblTime.text"];
+            
             if (date.dayInfo.specialDay.length === 0) {
                 page.calendar.setDate({ month: date.date.month, year: date.date.year });
                 page.flTimePick.visible = false;

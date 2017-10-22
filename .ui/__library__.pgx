@@ -34,8 +34,8 @@
 					"6222-8e08-4c3e-cbc9",
 					"42d8-c054-7638-f441"
 				],
-				"width": 217.49999999999997,
-				"height": 386.85999999999996
+				"width": 187.5,
+				"height": 333.5
 			}
 		},
 		{
@@ -83,7 +83,7 @@
 		{
 			"type": "FlexLayout",
 			"id": "c86d-de10-3486-0556",
-			"hiddenComponent": true,
+			"hiddenComponent": false,
 			"source": {
 				"page": "__library__"
 			},
@@ -100,7 +100,8 @@
 				"id": 1110,
 				"paddingTop": 20,
 				"paddingLeft": 10,
-				"paddingRight": 10
+				"paddingRight": 10,
+				"borderColor": "rgba( 16, 70, 130, 1 )"
 			},
 			"className": ".flexLayout",
 			"props": {
@@ -110,7 +111,7 @@
 				"visible": true,
 				"backgroundColor": "rgba( 255, 255, 255, 1 )",
 				"alpha": 1,
-				"borderColor": "rgba(0,0,0,1)",
+				"borderColor": "rgba( 16, 70, 130, 1 )",
 				"borderWidth": 0,
 				"font": {},
 				"flexProps": {
@@ -705,7 +706,7 @@
 		{
 			"type": "FlexLayout",
 			"id": "42d8-c054-7638-f441",
-			"hiddenComponent": false,
+			"hiddenComponent": true,
 			"source": {
 				"page": "__library__"
 			},
@@ -1231,15 +1232,15 @@
 					"positionType": "ABSOLUTE"
 				},
 				"usePageVariable": true,
+				"left": 0,
+				"top": 0,
+				"bottom": 0,
+				"right": 0,
 				"name": "flWaitAction",
 				"parent": "1b7e-2bfb-a7fc-1bf5",
 				"children": [
 					"7ac3-a2ed-3077-b3bf"
-				],
-				"left": 0,
-				"top": 0,
-				"bottom": 0,
-				"right": 0
+				]
 			}
 		},
 		{

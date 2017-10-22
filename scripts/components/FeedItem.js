@@ -11,6 +11,8 @@ const FeedItem = extend(FeedItemDesign)(function(_super, props, pageName) {
         child.touchEnabled = false;
     }
     feedItem.bindData = function bindData(data) {
+        if(!data)
+            return;
         // reDate.lastIndex = 0;
         // var dateArray = reDate.exec(data.actionDate.split(" ")[0]);
         data.actionDate = data.actionDate || "";

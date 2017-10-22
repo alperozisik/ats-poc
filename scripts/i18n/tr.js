@@ -50,8 +50,8 @@ SMF.i18n.defineLanguage('tr', {
 	"pgFeed.flatingActionButton.0.title": "Randevu ayarla",
 
 	"pgDoctorAppointment.headerBar.title": "Detaylar",
-	"pgDoctorAppointment.lblTitle.text": "Doktor Randevusu",
-	"pgDoctorAppointment.lblSubTitle.text": "This area will include the description of the appointment if any. We will mainly focus on the information provided by the web service",
+	"pgDoctorAppointment.lblTitle.text": "Labratuar Sonuçları",
+	// "pgDoctorAppointment.lblSubTitle.text": "This area will include the description of the appointment if any. We will mainly focus on the information provided by the web service",
 
 	"pgBookAppointmentDate.headerBar.title": "Randevu günü ayarla",
 	"pgBookAppointmentDate.lblSelectDate.text": "Gün seç",
@@ -65,5 +65,7 @@ SMF.i18n.defineLanguage('tr', {
 	"pgBookAppointment.flCardAppointmentType.lblTitle.text": "Randevu türü seç",
 	"pgBookAppointment.flCardPeriod.lblTitle.text": "Periyot Seç",
 	"cardSelect": "Seç",
+	
+	"labResults": "Labratuar Sonuçları",
 
 });

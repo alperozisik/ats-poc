@@ -4,7 +4,7 @@ const http = new Http();
 const mixinDeep = require('mixin-deep');
 const mcs = require("../../lib/mcs");
 //const System = require('sf-core/device/system');
-var lang =  Device.language;//System.language.subStr(0, 2);
+var lang = Device.language; //System.language.subStr(0, 2);
 lang = lang === "ar" ? "ar" : "en";
 const commonHeaders = {
     "Content-Type": "application/json; charset=utf-8",
@@ -98,7 +98,10 @@ function bodyParser(response) {
             response.body = response.body.toString();
             console.log(`body = ${response.body}`);
         case contentType === "application/json":
-            response.body = JSON.parse(response.body);
+            try {
+                response.body = JSON.parse(response.body);
+            }
+            catch (ex) {}
             break;
     }
 }

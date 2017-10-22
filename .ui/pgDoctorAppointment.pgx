@@ -37,8 +37,8 @@
 					"e301-ab21-64f1-fccc",
 					"6a1a-f40c-4933-54e0"
 				],
-				"width": 292.5,
-				"height": 470.34
+				"width": 202.5,
+				"height": 325.62
 			}
 		},
 		{
@@ -95,6 +95,7 @@
 				"textColor": "rgba( 155, 155, 155, 0.58 )",
 				"text": "Doctor's Appointment",
 				"marginBottom": 5,
+				"usePageVariable": true,
 				"font": {
 					"size": 24,
 					"family": "Arial"
@@ -127,7 +128,8 @@
 				"marginBottom": 5,
 				"name": "lblTitle",
 				"parent": "fc76-6c92-a2f3-c759",
-				"children": []
+				"children": [],
+				"usePageVariable": true
 			}
 		},
 		{
@@ -139,12 +141,13 @@
 			"userProps": {
 				"multiline": true,
 				"textColor": "rgba( 74, 74, 74, 1 )",
-				"text": "This area will include the description of the appointment if any. We will mainly focus on the information provided by the web service",
+				"text": null,
 				"width": null,
 				"height": 130,
 				"marginLeft": 10,
 				"marginRight": 10,
 				"marginBottom": 5,
+				"usePageVariable": true,
 				"font": {
 					"size": 19
 				}
@@ -154,7 +157,7 @@
 				"width": null,
 				"height": 130,
 				"touchEnabled": true,
-				"text": "This area will include the description of the appointment if any. We will mainly focus on the information provided by the web service",
+				"text": null,
 				"visible": true,
 				"multiline": true,
 				"backgroundColor": "#FFFFFF",
@@ -178,7 +181,8 @@
 				"marginBottom": 5,
 				"name": "lblSubTitle",
 				"parent": "fc76-6c92-a2f3-c759",
-				"children": []
+				"children": [],
+				"usePageVariable": true
 			}
 		},
 		{
@@ -249,10 +253,10 @@
 					"flexGrow": 1
 				},
 				"usePageVariable": true,
+				"rowHeight": 60,
 				"name": "lvResults",
 				"parent": "fc76-6c92-a2f3-c759",
-				"children": [],
-				"rowHeight": 60
+				"children": []
 			}
 		}
 	]

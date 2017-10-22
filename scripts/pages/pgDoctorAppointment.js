@@ -4,6 +4,8 @@ const JET = require('sf-extension-oracle-jet');
 const LviDoctorAppointmentDetailsRow = require("../components/LviDoctorAppointmentDetailsRow");
 const Color = require('sf-core/ui/color');
 const Router = require("sf-core/ui/router");
+const labService = require("../services/lab");
+const waitDialog = require("../lib/waitDialog");
 
 const PgDoctorAppointment = extend(PgDoctorAppointmentDesign)(
     // Constructor
@@ -26,30 +28,14 @@ const PgDoctorAppointment = extend(PgDoctorAppointmentDesign)(
 function onShow(superOnShow, data = {}) {
     superOnShow();
     const page = this;
+    global.SMF.i18n.bindLanguage("pgDoctorAppointment", page);
+    page.wvChart.visible = false;
+    page.headerBar.itemColor = Color.create("#104682");
+    waitDialog.show();
+    setTimeout(() => {
+        fetchData.call(page, data.data.orderNo);
+    }, 450);
 
-    if (!page.jet) {
-        page.jet = new JET({
-            jetPath: "assets://jet/",
-            webView: page.wvChart
-        });
-        Object.assign(page.jet, {
-            series: [{ name: "Series 1", items: [74, 42, 70, 46] },
-                { name: "Series 2", items: [50, 58, 46, 54] },
-                { name: "Series 3", items: [34, 22, 30, 32] },
-                { name: "Series 4", items: [18, 6, 14, 22] }
-            ],
-            groups: ["Group A", "Group B", "Group C", "Group D"],
-            type: JET.Type.AREA,
-            orientation: JET.Orientation.VERTICAL,
-            stack: JET.Stack.OFF,
-            animationOnDisplay: JET.AnimationOnDisplay.AUTO,
-            animationOnDataChange: JET.AnimationOnDataChange.AUTO,
-
-        });
-        page.jet.jetData.backgroundColor = "#FFFFFF";
-    }
-
-    fetchData.call(page);
 }
 
 /**
@@ -61,9 +47,9 @@ function onLoad(superOnLoad) {
     superOnLoad();
     const page = this;
     page.lvResults.refreshEnabled = false;
-    page.headerBar.itemColor = Color.create("#104682");
+
     page.android.onBackButtonPressed = () => Router.goBack();
-    
+
     page.lvResults.onRowCreate = function() {
         var listViewItem = new LviDoctorAppointmentDetailsRow();
         return listViewItem;
@@ -80,74 +66,63 @@ function onLoad(superOnLoad) {
     };
 }
 
-function fetchData() {
+function fetchData(orderNo) {
     const page = this;
 
-    setTimeout(() => {
-        page.data = page.data || {};
-        page.data.results = page.data.results || [{
-                title: "Cholesterol",
-                value: 3.5,
-                color: "#8E9038"
-            },
-            {
-                title: "Lab Result",
-                value: 103,
-                color: "#2BC122"
-            }, {
-                title: "Lab Result",
-                value: "35/90",
-                color: "#51BB4F"
-            },
-            {
-                title: "Lab Result",
-                value: "65%",
-                color: "#E12C3B"
+    labService.getLabResults(orderNo).then((result) => {
+        page.data = {
+            results: [],
+            series: []
+        };
+        waitDialog.hide();
+        let labResultsTextArray = [];
+        result.forEach((item) => {
+
+            page.data.results.push({
+                title: item.testName,
+                value: item.result,
+                color: (item.isHigh || item.isLow) ? "#EE0000" : "111111"
+            });
+            labResultsTextArray.push(`∙ ${item.resultDetails}`);
+            if (!isNaN(item.result)) {
+                page.data.series.push({
+                    name: item.testName,
+                    items: [Number(item.result)]
+                });
             }
-        ];
-
-        //to add more items remove comments below
-        /*page.data.results.push({
-            title: "Cholesterol",
-            value: 3.5,
-            color: "#8E9038"
-        }, {
-            title: "Lab Result",
-            value: 103,
-            color: "#2BC122"
-        }, {
-            title: "Lab Result",
-            value: "35/90",
-            color: "#51BB4F"
-        }, {
-            title: "Lab Result",
-            value: "65%",
-            color: "#E12C3B"
-        }, {
-            title: "Cholesterol",
-            value: 3.5,
-            color: "#8E9038"
-        }, {
-            title: "Lab Result",
-            value: 103,
-            color: "#2BC122"
-        }, {
-            title: "Lab Result",
-            value: "35/90",
-            color: "#51BB4F"
-        }, {
-            title: "Lab Result",
-            value: "65%",
-            color: "#E12C3B"
-        });/**/
-
+        });
+        page.lblSubTitle.text = labResultsTextArray.join("\n");
         loadData.call(page);
-    }, 150);
+    }).catch((err) => {
+        console.log(`Lab error: ${JSON.stringify(err)}`);
+    });
 
 }
 
 function loadData() {
     const page = this;
+
+    if (!page.jet && page.data.series.length > 0) {
+        page.jet = new JET({
+            jetPath: "assets://jet/",
+            webView: page.wvChart
+        });
+        Object.assign(page.jet, {
+            series: page.data.series,
+            groups: [global.lang.labResults],
+            type: JET.Type.BAR,
+            orientation: JET.Orientation.VERTICAL,
+            stack: JET.Stack.OFF,
+            animationOnDisplay: JET.AnimationOnDisplay.AUTO,
+            animationOnDataChange: JET.AnimationOnDataChange.AUTO,
+
+        });
+        page.jet.jetData.backgroundColor = "#FFFFFF";
+        page.wvChart.visible = true;
+    }
+    page.data.series.length === 0 && page.layout.removeChild(page.wvChart);
+
+
     page.lvResults.itemCount = page.data.results.length;
     page.lvResults.refreshData();
 

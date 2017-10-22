@@ -50,8 +50,8 @@ SMF.i18n.defineLanguage('en', {
 	"pgFeed.flatingActionButton.0.title": "Book Appointment",
 
 	"pgDoctorAppointment.headerBar.title": "Details",
-	"pgDoctorAppointment.lblTitle.text": "Doctor's Appointment",
-	"pgDoctorAppointment.lblSubTitle.text": "This area will include the description of the appointment if any. We will mainly focus on the information provided by the web service",
+	"pgDoctorAppointment.lblTitle.text": "Laboratory Results",
+	// "pgDoctorAppointment.lblSubTitle.text": "This area will include the description of the appointment if any. We will mainly focus on the information provided by the web service",
 
 	"pgBookAppointmentDate.headerBar.title": "Book Appointment Date",
 	"pgBookAppointmentDate.lblSelectDate.text": "Select Date",
@@ -65,5 +65,7 @@ SMF.i18n.defineLanguage('en', {
 	"pgBookAppointment.flCardPeriod.lblTitle.text": "Select Period",
 	"pgBookAppointment.flCardAppointmentType.lblTitle.text": "Select Appointment Type",
 	"cardSelect": "Select",
+	
+	"labResults": "Laboratory Results",
 
 });

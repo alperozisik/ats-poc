@@ -12,6 +12,7 @@ const Image = require("sf-core/ui/image");
 const mainColor = Color.create("#104682");
 const waitDialog = require("../lib/waitDialog");
 const userService = require("../services/user");
+const atsColor = Color.create("#104682");
 
 const PgFeed = extend(PgFeedDesign)(
     // Constructor
@@ -111,6 +112,7 @@ function onLoad(superOnLoad) {
         var listViewLoadItem = new ListViewLoadItem();
         listViewItem.addChild(feedItem);
         listViewItem.addChild(listViewLoadItem);
+        feedItem.boderColor = atsColor;
         return listViewItem;
     };
 
@@ -123,6 +125,13 @@ function onLoad(superOnLoad) {
         listViewLoadItem.activityIndicator.visible = lastRow;
         if (!lastRow) {
             feedItem.bindData(page.feedData.items[index]);
+            var data = page.feedData.items[index];
+            if (data && !data.orderNo) {
+                feedItem.orderWidth = 3;
+            }
+            else {
+                feedItem.orderWidth = 0;
+            }
         }
         else {
             fetchData.call(page);

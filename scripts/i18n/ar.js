@@ -50,8 +50,8 @@ SMF.i18n.defineLanguage('en', {
 	"pgFeed.flatingActionButton.0.title": "موعد الكتاب",
 
 	"pgDoctorAppointment.headerBar.title": "تفاصيل",
-	"pgDoctorAppointment.lblTitle.text": "موعد طبيب",
-	"pgDoctorAppointment.lblSubTitle.text": "This area will include the description of the appointment if any. We will mainly focus on the information provided by the web service",
+	"pgDoctorAppointment.lblTitle.text": "نتائج المختبر",
+	// "pgDoctorAppointment.lblSubTitle.text": "This area will include the description of the appointment if any. We will mainly focus on the information provided by the web service",
 
 	"pgBookAppointmentDate.headerBar.title": "تاريخ",
 	"pgBookAppointmentDate.lblSelectDate.text": "حدد تاريخ",
@@ -66,5 +66,6 @@ SMF.i18n.defineLanguage('en', {
 	"pgBookAppointment.flCardAppointmentType.lblTitle.text": "حدد نوع الموعد",
 	"cardSelect": "تحديد",
 	
+	"labResults": "نتائج المختبر",
 	
 });
