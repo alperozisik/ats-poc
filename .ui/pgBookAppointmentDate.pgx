@@ -40,8 +40,8 @@
 					"ea90-d750-ad1c-55dc",
 					"af10-ef7a-42d5-acea"
 				],
-				"width": 232.5,
-				"height": 373.86
+				"width": 142.5,
+				"height": 229.14000000000001
 			}
 		},
 		{
@@ -640,7 +640,12 @@
 				"usePageVariable": true,
 				"text": "Book",
 				"left": 0,
-				"top": 0
+				"top": null,
+				"right": 0,
+				"bottom": 0,
+				"flexProps": {
+					"positionType": "ABSOLUTE"
+				}
 			},
 			"className": ".button",
 			"props": {
@@ -662,15 +667,17 @@
 					"family": "Arial"
 				},
 				"flexProps": {
-					"positionType": "RELATIVE",
+					"positionType": "ABSOLUTE",
 					"alignSelf": "AUTO"
 				},
 				"usePageVariable": true,
+				"left": 0,
+				"top": null,
+				"right": 0,
 				"name": "btnBook",
 				"parent": "af10-ef7a-42d5-acea",
 				"children": [],
-				"left": 0,
-				"top": 0
+				"bottom": 0
 			}
 		}
 	]

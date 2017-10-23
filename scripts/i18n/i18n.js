@@ -7,6 +7,9 @@
 	"SMF.i18n.languageKV" is populated by calling "SMF.i18n.defineLanguage".
 	Required for BC
 */
+
+const availbableLanguages = ["en", "ar", "tr"];
+
 global.lang = {};
 const dot = require('dot-object');
 SMF.i18n = {
@@ -61,7 +64,11 @@ SMF.i18n = {
 	}
 };
 
+
+availbableLanguages.forEach((lng) => require(`./${lng}`));
 require('i18n/en.js');
 require('i18n/tr.js');
+require('i18n/ar.js');
 
-SMF.i18n.switchLanguage(Device.language);
+
+SMF.i18n.switchLanguage(availbableLanguages.indexOf(Device.language) > -1 ? Device.language : availbableLanguages[0]);

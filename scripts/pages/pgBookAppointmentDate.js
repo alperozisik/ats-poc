@@ -78,6 +78,7 @@ const PgBookAppointmentDate = extend(PgBookAppointmentDateDesign)(
         };
 
         calendar.onBeforeMonthChange = function(monthChangeArgs) {
+            return true;
             var dCurrent = new Date();
             dCurrent = new Date(`${dCurrent.getFullYear()}-${dCurrent.getMonth() + 1}-01`);
             var dNew = new Date(`${monthChangeArgs.year}-${monthChangeArgs.month}-01`);
@@ -99,7 +100,7 @@ function onShow(superOnShow, data = {}) {
     page.headerBar.itemColor = Color.create("#104682");
     page.data = data.contextData || {};
     var lang = Device.language;
-    lang = lang === "ar" ? "ar" : "en";
+    lang = lang === "ar" ? "ar-sa" : "en";
     page.calendar.changeCalendar(lang, lang === "en" ? "gregorian" : "hijri");
     setTimeout(() => {
         setAvailableDates.call(page);
@@ -123,7 +124,7 @@ function onLoad(superOnLoad) {
     superOnLoad();
     const page = this;
     page.android.onBackButtonPressed = function() { Router.goBack() };
-    page.btnBook.height = 0;
+    page.btnBook.bottom = -70;
 
     page.btnBook.onPress = function() {
         waitDialog.show();
@@ -182,7 +183,7 @@ function setAvailableDates(year, month) {
             });
 
             var lang = Device.language; //System.language.subStr(0, 2);
-            lang = lang === "ar" ? "ar" : "en";
+            lang = lang === "ar" ? "ar-sa" : "en";
             page.calendar.changeCalendar(lang, lang === "en" ? "gregorian" : "hijri", specialDays);
             page.calendar.setDate({ month, year });
             page.flWait.visible = false;
@@ -230,12 +231,13 @@ function showTimePicker(date) {
 
 function showBookButton(page) {
     Animator.animate(page.layout, 250, function() {
-        page.btnBook.height = 70;
+        page.btnBook.bottom = 0;
     });
 }
 
 function hideBookButton(page) {
-    page.btnBook.height = 0;
+    page.btnBook.bottom = -70;
+    page.layout.applyLayout();
 }
 
 function cancelCallback() {}

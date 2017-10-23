@@ -3,6 +3,8 @@ const Http = require("sf-core/net/http");
 const http = new Http();
 const mixinDeep = require('mixin-deep');
 const mcs = require("../../lib/mcs");
+const Base64_Helper = require("../../lib/base64");
+const Base64 = new Base64_Helper();
 //const System = require('sf-core/device/system');
 var lang = Device.language; //System.language.subStr(0, 2);
 lang = lang === "ar" ? "ar" : "en";
@@ -95,7 +97,7 @@ function bodyParser(response) {
     const contentType = getContentType(response.headers);
     switch (true) {
         case !contentType.startsWith("image"):
-            response.body = response.body.toString();
+            response.body = Base64.decode(response.body.toBase64());
             console.log(`body = ${response.body}`);
         case contentType === "application/json":
             try {
