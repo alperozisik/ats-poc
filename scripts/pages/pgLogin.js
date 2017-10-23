@@ -74,7 +74,7 @@ function fingerprintCallback(err, fingerprintResult) {
     else
         password = fingerprintResult.password;
     if (!password)
-        return alert("password is required");
+        return alert(global.lang.passwordRequired);
     page.aiLogin.visible = true;
     page.btnLogin.enabled = false;
     loginWithUserNameAndPassword(page.userNameInput.text, password, function(err, patientId) {
