@@ -78,7 +78,7 @@ const PgBookAppointmentDate = extend(PgBookAppointmentDateDesign)(
         };
 
         calendar.onBeforeMonthChange = function(monthChangeArgs) {
-            return true;
+            //return true;
             var dCurrent = new Date();
             dCurrent = new Date(`${dCurrent.getFullYear()}-${dCurrent.getMonth() + 1}-01`);
             var dNew = new Date(`${monthChangeArgs.year}-${monthChangeArgs.month}-01`);
