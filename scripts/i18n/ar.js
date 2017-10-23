@@ -54,7 +54,7 @@ SMF.i18n.defineLanguage('ar', {
 	// "pgDoctorAppointment.lblSubTitle.text": "ستشمل هذه المنطقة وصف الموعد إن وجد. وستركز بشكل رئيسي على المعلومات التي تقدمها خدمة الويب.",
 
 	"pgBookAppointmentDate.headerBar.title": "تاريخ حجز الموعد",
-	"pgBookAppointmentDate.lblSelectDate.text": "إختيار التاريخ",
+	"pgBookAppointmentDate.lblSelectDate.text": "اختيار التاريخ",
 	"pgBookAppointmentDate.btnBook.text": "حجز", //apointment booking
 	"pgBookAppointmentDate.btnPickTime.text": "تحديد",
 	"pgBookAppointmentDate.lblTime.text": "زمن",
@@ -62,10 +62,13 @@ SMF.i18n.defineLanguage('ar', {
 	"pgBookAppointment.headerBar.title": "حجز موعد",
 	"pgBookAppointment.flCardDepartment.lblTitle.text": "اختيار القسم",
 	"pgBookAppointment.flCardDoctor.lblTitle.text": "اختيار الطبيب",
-	"pgBookAppointment.flCardPeriod.lblTitle.text": "Select Period",
+	"pgBookAppointment.flCardPeriod.lblTitle.text": "اختيار الفترة",
 	"pgBookAppointment.flCardAppointmentType.lblTitle.text": "اختيار نوع الموعد",
+	"pgBookAppointment.btnNext.text": "التالى", //go forward to next step
 	"cardSelect": "اختيار",
 	
 	"labResults": "نتائج المختبر",
+	
+	"passwordRequired": "كلمة المرور",
 
 });

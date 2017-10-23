@@ -64,8 +64,10 @@ SMF.i18n.defineLanguage('en', {
 	"pgBookAppointment.flCardDoctor.lblTitle.text": "Select Doctor",
 	"pgBookAppointment.flCardPeriod.lblTitle.text": "Select Period",
 	"pgBookAppointment.flCardAppointmentType.lblTitle.text": "Select Appointment Type",
+	"pgBookAppointment.btnNext.text": "Next", //go forward to next step
 	"cardSelect": "Select",
 	
 	"labResults": "Laboratory Results",
 
+	"passwordRequired": "password required",
 });

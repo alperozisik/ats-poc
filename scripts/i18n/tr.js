@@ -64,8 +64,11 @@ SMF.i18n.defineLanguage('tr', {
 	"pgBookAppointment.flCardDoctor.lblTitle.text": "Doktor seç",
 	"pgBookAppointment.flCardAppointmentType.lblTitle.text": "Randevu türü seç",
 	"pgBookAppointment.flCardPeriod.lblTitle.text": "Periyot Seç",
+	"pgBookAppointment.btnNext.text": "İleri", //go forward to next step
 	"cardSelect": "Seç",
 	
 	"labResults": "Labratuar Sonuçları",
+	
+	"passwordRequired": "şifre gerekli",
 
 });
