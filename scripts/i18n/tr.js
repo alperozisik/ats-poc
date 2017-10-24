@@ -66,9 +66,12 @@ SMF.i18n.defineLanguage('tr', {
 	"pgBookAppointment.flCardPeriod.lblTitle.text": "Periyot Seç",
 	"pgBookAppointment.btnNext.text": "İleri", //go forward to next step
 	"cardSelect": "Seç",
-	
+
 	"labResults": "Labratuar Sonuçları",
-	
+
 	"passwordRequired": "şifre gerekli",
+
+	"cannotLogin": "Oturum açılamıyor. Kullanıcı adı ve şifreyi kontrol edin. Ya da sistem kapalı",
+	"cannotBook": "Randevu olşuturulamıyor",
 
 });

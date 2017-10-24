@@ -13,6 +13,9 @@ const mainColor = Color.create("#104682");
 const waitDialog = require("../lib/waitDialog");
 const userService = require("../services/user");
 const atsColor = Color.create("#104682");
+const lng = global.Device.language;
+const System = require('sf-core/device/system');
+const FlexLayout = require('sf-core/ui/flexlayout');
 
 const PgFeed = extend(PgFeedDesign)(
     // Constructor
@@ -49,7 +52,8 @@ const PgFeed = extend(PgFeedDesign)(
 function onShow(superOnShow, data = {}) {
     superOnShow();
     const page = this;
-    !page.feedData && global.SMF.i18n.bindLanguage("pgFeed", page);
+    global.pgFeed = page;
+    global.SMF.i18n.bindLanguage("pgFeed", page);
     page.feedData = {
         page: 0,
         items: [],
@@ -73,12 +77,15 @@ function onShow(superOnShow, data = {}) {
                 }
             })
         ];
-        page.fab = new FloatingMenu({
+
+        let fabOptions = {
             items: fabItems,
             rotateEnabled: true,
             icon: Image.createFromFile("images://ic_add_white.png"),
             color: mainColor
-        });
+        };
+        page.fab = new FloatingMenu(fabOptions);
+        
         page.layout.addChild(page.fab);
     }
     console.log(`patientId is = ${data.patientId}`);

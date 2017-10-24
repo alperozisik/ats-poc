@@ -6,17 +6,17 @@ const Router = require('sf-core/router');
 const rau = require("sf-extension-utils").rau;
 const userService = require("../services/user");
 const appData = require("../lib/appData");
+const lng = Device.language;
 
 const PgLogin = extend(PgLoginDesign)(
-    // Constructor
     function(_super) {
-        // Initalizes super class for this page scope
         _super(this);
-        // overrides super.onShow method
         this.onShow = onShow.bind(this, this.onShow.bind(this));
-        // overrides super.onLoad method
         this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
-
+        
+        if (lng === "ar") {
+            
+        }
     });
 
 /**
@@ -81,7 +81,7 @@ function fingerprintCallback(err, fingerprintResult) {
         page.aiLogin.visible = false;
         page.btnLogin.enabled = true;
         if (err)
-            return alert("Cannot login. Check user name and password. Or system is down");
+            return alert(global.lang.cannotLogin);
         fingerprintResult && fingerprintResult.success(); //Important!
         Router.go('pgFeed', {
             patientId

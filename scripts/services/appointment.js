@@ -27,7 +27,7 @@ function getAppointmentCount(clinicNo, doctorId, year, month) {
 
 function getSlotTime(doctorId, period, date) {
     return new Promise((resolve, reject) => {
-        var reqOps = serviceCall.createRequestOptions(`/appointment/${doctorId}/${period}/${date}`, {
+        var reqOps = serviceCall.createRequestOptions(`appointment/${doctorId}/${period}/${date}`, {
             method: "GET"
         });
         request(reqOps).then((result) => {
@@ -57,7 +57,7 @@ function bookAppointment(doctorId, slotSerial, categorycode) {
         body.notificationToken = appData.notificationToken;
 
     return new Promise((resolve, reject) => {
-        var reqOps = serviceCall.createRequestOptions(`/appointment`, {
+        var reqOps = serviceCall.createRequestOptions(`appointment`, {
             method: "POST",
             body
         });

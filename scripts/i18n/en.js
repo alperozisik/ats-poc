@@ -66,8 +66,11 @@ SMF.i18n.defineLanguage('en', {
 	"pgBookAppointment.flCardAppointmentType.lblTitle.text": "Select Appointment Type",
 	"pgBookAppointment.btnNext.text": "Next", //go forward to next step
 	"cardSelect": "Select",
-	
+
 	"labResults": "Laboratory Results",
 
 	"passwordRequired": "password required",
+
+	"cannotLogin": "Cannot login. Check user name and password. Or system is down",
+	"cannotBook": "Cannot book appointment",
 });

@@ -38,7 +38,18 @@ const PgCalendar = extend(PgCalendarDesign)(
         };
 
         calendar.onMonthChange = function(monthChangeArgs) {
-            
+
+        };
+
+        calendar.onDaySelect = function(date) {
+
+            if (date.dayInfo.specialDay.length === 0) {
+                page.calendar.setDate({ month: date.date.month, year: date.date.year });
+
+                return;
+            }
+            if (!page.dateSelected) { //first time date selected in page
+            }
         };
     });
 
@@ -94,24 +105,23 @@ function loadCal(month = 10, year = 2017) {
     });
 
     var lang = Device.language; //System.language.subStr(0, 2);
-    lang = lang === "ar" ? "ar" : "en";
+    lang = lang === "ar" ? "ar-sa" : "en";
     page.calendar.changeCalendar(lang, lang === "en" ? "gregorian" : "hijri", specialDays);
-    page.calendar.addStyles(calendarStyle);
-
+    page.calendar.setDate({ month, year });
 }
 
 var calendarStyle = {
-    ".calendar.header_navbar_monthLabel": {
-        "textColor": "#F10000"
-    },
     ".calendar": {
         ".day": {
-            textColor: "#00FF00",
-            touchEnabled: false,
+            "parent": {
+                touchEnabled: false
+            },
             "&-specialDay": {
                 backgroundColor: "#9DE188",
-                textColor: "#0000FF",
-                touchEnabled: true
+                parent: {
+                    touchEnabled: true
+                },
+
             }
         }
     }

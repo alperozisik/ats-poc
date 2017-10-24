@@ -32,8 +32,9 @@ function login(username, password) {
                         }
                     });
                     if (!err || mcs.notificationToken) {
-                        reqOps.body.notificationToken = result.notificationToken || mcs.notificationToken;
-                        appData.notificationToken = result.notificationToken || mcs.notificationToken;
+                        let token = result.notificationToken || mcs.notificationToken;
+                        reqOps.body.notificationToken = token;
+                        appData.notificationToken = token;
                     }
                     request(reqOps).then((result) => {
                         appData.patientId = result.patientId;

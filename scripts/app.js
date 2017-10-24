@@ -2,7 +2,7 @@
 require("i18n/i18n.js"); // Generates global lang object
 
 const Application = require("sf-core/application");
-
+const Notifications = require("sf-core/notifications");
 // Set uncaught exception handler, all exceptions that are not caught will
 // trigger onUnhandledError callback.
 Application.onUnhandledError = function(e) {
@@ -11,8 +11,11 @@ Application.onUnhandledError = function(e) {
         message: e.message + "\n\n*" + e.sourceURL + "\n*" + e.line + "\n*" + e.stack
     });
 };
-
-
+const lng = global.Device.language;
+const theme = require("./themes/Defaults.json");
+//theme[".flexLayout"].flexProps.direction = lng === "ar" ? "LTR" : "LTR";
+theme[".label"].flexProps.textAlignment = lng === "ar" ? "MIDRIGHT" : "MIDLEFT";
+theme[".textBox"].flexProps.textAlignment = lng === "ar" ? "MIDRIGHT" : "MIDLEFT";
 const Router = require("sf-core/ui/router");
 const stylerBuilder = require("library/styler-builder");
 const settings = require("./settings.json");
@@ -21,8 +24,9 @@ stylerBuilder.setActiveTheme(settings.config.theme.currentTheme);
 require("sf-extension-utils");
 
 Application.onReceivedNotification = function(e) {
-    e && e.remote && alert("Notification: " + JSON.stringify(e.remote), "Notification recieved");
+    alert(JSON.stringify(arguments), "Notification recieved arguments");
 };
+
 
 
 Router.add("pgLogin", require("./pages/pgLogin"), true);

@@ -1,17 +1,27 @@
 const extend = require('js-base/core/extend');
 const FlexLayout = require('sf-core/ui/flexlayout');
 const FeedItemDesign = require('library/FeedItem');
+const lng = Device.language;
 /*const reDate = /^(2\d{3})-([01]?\d)-([0-3]?\d)$/;*/
 const FeedItem = extend(FeedItemDesign)(function(_super, props, pageName) {
     _super(this, props || FeedItemDesign.defaults);
     const feedItem = this;
     feedItem.pageName = pageName;
+
+    //if (lng === "ar") {
+        // let direction = FlexLayout.Direction.RTL;
+        // feedItem.lblDate.direction = direction;
+        // feedItem.lblTitle.direction = direction;
+        // feedItem.lblSubtitle.direction = direction;
+        // feedItem.lblDescription.direction = direction;
+    //}
+
     for (let childName in feedItem.children) {
         let child = feedItem.children[childName];
         child.touchEnabled = false;
     }
     feedItem.bindData = function bindData(data) {
-        if(!data)
+        if (!data)
             return;
         // reDate.lastIndex = 0;
         // var dateArray = reDate.exec(data.actionDate.split(" ")[0]);

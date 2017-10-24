@@ -15,7 +15,7 @@ SMF.i18n.defineLanguage('ar', {
 	"networkError": "خطأ في الشبكة، الرجاء المحاولة لاحقاً.. ",
 	"applicationError": "يوجد هناك خلل لم تتم معالجته في التطبيق.. الرجاء إبلاغ المطورين..",
 	"delete": "حذف",
-	
+
 	"permissionRequiredMessage": "لكي يعمل التطبيق بشكل صحيح الصلاحيات التالية يجب أن تكون متاحة.",
 	"permissionRequiredTitle": "الصلاحيات المطلوبة",
 	"checkingUpdate": "التأكد من التحديث",
@@ -66,9 +66,11 @@ SMF.i18n.defineLanguage('ar', {
 	"pgBookAppointment.flCardAppointmentType.lblTitle.text": "اختيار نوع الموعد",
 	"pgBookAppointment.btnNext.text": "التالى", //go forward to next step
 	"cardSelect": "اختيار",
-	
+
 	"labResults": "نتائج المختبر",
-	
+
 	"passwordRequired": "كلمة المرور",
 
+	"cannotLogin": "لايمكن تسجيل الدخول, اعد تسجيل اسم المستخدم و كلمة المرور, او ان النظام لايعمل",
+	"cannotBook": "الحجز غير ممكن: لايمكن حجز موعد",
 });

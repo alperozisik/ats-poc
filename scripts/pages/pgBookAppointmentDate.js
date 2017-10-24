@@ -16,9 +16,7 @@ const PgBookAppointmentDate = extend(PgBookAppointmentDateDesign)(
     function(_super) {
         // Initalizes super class for this page scope
         _super(this);
-        // overrides super.onShow method
         this.onShow = onShow.bind(this, this.onShow.bind(this));
-        // overrides super.onLoad method
         this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
         const page = this;
         const calendar = new Calendar();
@@ -49,6 +47,10 @@ const PgBookAppointmentDate = extend(PgBookAppointmentDateDesign)(
                             touchEnabled: true
                         },
 
+                    },
+                    "&-weekend": {
+                        "borderWidth": 0,
+                        "textColor": "#111111"
                     }
                 }
             }
@@ -58,7 +60,7 @@ const PgBookAppointmentDate = extend(PgBookAppointmentDateDesign)(
         calendar.onDaySelect = function(date) {
             hideBookButton(page);
             page.lblTime.text = global.lang["pgBookAppointmentDate.lblTime.text"];
-            
+
             if (date.dayInfo.specialDay.length === 0) {
                 page.calendar.setDate({ month: date.date.month, year: date.date.year });
                 page.flTimePick.visible = false;
@@ -154,6 +156,11 @@ function setAvailableDates(year, month) {
     var d = new Date();
     year = year || d.getFullYear();
     month = month || d.getMonth() + 1;
+    // var lang = Device.language;
+    // if(lang === "ar") {
+    //     month--;
+    // }
+
     page.flWait.visible = true;
     page.btnPickTime.visible = true;
     appointmentService.getAppointmentCount(data.clinicNo, data.doctorId, year, month).then(
