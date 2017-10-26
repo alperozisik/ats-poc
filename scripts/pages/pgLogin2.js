@@ -44,7 +44,7 @@ function onLoad(superOnLoad) {
     });
 
     page.btnLogin.backgroundColor = Color.createGradient({
-        startColor: Color.create("##acf3e3"),
+        startColor: Color.create("#acf3e3"),
         endColor: Color.create("#69bcac"),
         direction: Color.GradientDirection.DIAGONAL_LEFT
     });
@@ -57,15 +57,19 @@ function onLoad(superOnLoad) {
             page.lblArabic.right = NaN;
             page.tbUserName.textAlignment = TextAlignment.MIDRIGHT;
             page.tbPassword.textAlignment = TextAlignment.MIDRIGHT;
+            page.lblSupport.textAlignment = TextAlignment.MIDRIGHT;
+            page.lblSignup.textAlignment = TextAlignment.MIDLEFT;
             page.lblArabic.text = "English";
         }
         else {
             page.layout.direction = FlexLayout.Direction.LTL;
-            setRtl(page);
+            setLtl(page);
             page.lblArabic.right = page.lblArabic.left;
             page.lblArabic.left = NaN;
             page.tbUserName.textAlignment = TextAlignment.MIDLEFT;
             page.tbPassword.textAlignment = TextAlignment.MIDLEFT;
+            page.lblSupport.textAlignment = TextAlignment.MIDLEFT;
+            page.lblSignup.textAlignment = TextAlignment.MIDRIGHT;
             page.lblArabic.text = "العربية";
         }
         usingLtr = !usingLtr;
@@ -89,7 +93,7 @@ function setRtl(component) {
 function setLtl(component) {
     if (!component.direction)
         return;
-    component.direction = FlexLayout.Direction.LTL;
+    component.direction = FlexLayout.Direction.LTR;
 
     if (component.children) {
         for (var i in component.children) {

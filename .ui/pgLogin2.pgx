@@ -39,8 +39,8 @@
 					"1b28-3589-f90b-0650",
 					"cf88-2021-6913-8d53"
 				],
-				"width": 468.75,
-				"height": 833.75
+				"width": 221.25,
+				"height": 393.53
 			}
 		},
 		{
@@ -156,7 +156,7 @@
 				"name": "imgLogo",
 				"parent": "03f4-9994-a399-f257",
 				"children": [],
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/ats/ui-editor/img/combined_shape.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=1.25&brandModel=iPhone%207"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/ats/ui-editor/img/combined_shape.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.59&brandModel=iPhone%207"
 			}
 		},
 		{
@@ -287,6 +287,10 @@
 				"alpha": 1,
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
+				"paddingLeft": null,
+				"paddingRight": null,
+				"marginLeft": 15,
+				"marginRight": 15,
 				"flexProps": {
 					"alignSelf": "STRETCH",
 					"direction": "INHERIT",
@@ -302,11 +306,7 @@
 				"children": [
 					"7a68-093c-440f-b87c",
 					"01b7-5469-3238-0670"
-				],
-				"paddingLeft": null,
-				"paddingRight": null,
-				"marginLeft": 15,
-				"marginRight": 15
+				]
 			}
 		},
 		{
@@ -453,7 +453,7 @@
 				"name": "imgUser",
 				"parent": "5717-e19d-1c7f-ec6c",
 				"children": [],
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/ats/ui-editor/img/name.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=1.25&brandModel=iPhone%207?random=0.09084802174459794"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/ats/ui-editor/img/name.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.59&brandModel=iPhone%207"
 			}
 		},
 		{
@@ -633,7 +633,7 @@
 				"name": "imgPassword",
 				"parent": "9af3-8719-750d-9d1a",
 				"children": [],
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/ats/ui-editor/img/password.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=1.25&brandModel=iPhone%207?random=0.422063426770267"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/ats/ui-editor/img/password.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.59&brandModel=iPhone%207"
 			}
 		},
 		{
@@ -870,6 +870,7 @@
 				"borderWidth": 0,
 				"textColor": "rgba( 255, 255, 255, 1 )",
 				"textAlignment": "MIDCENTER",
+				"marginTop": 5,
 				"font": {
 					"size": 14,
 					"bold": false,
@@ -880,10 +881,9 @@
 					"alignSelf": "AUTO",
 					"positionType": "RELATIVE"
 				},
-				"name": "label1",
+				"name": "lflForgotPassword",
 				"parent": "83c4-316f-2187-069f",
-				"children": [],
-				"marginTop": 5
+				"children": []
 			}
 		},
 		{
@@ -954,6 +954,7 @@
 				"alpha": 1,
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
+				"image": "invalid_name.png",
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"positionType": "RELATIVE"
@@ -961,8 +962,7 @@
 				"name": "imageView1",
 				"parent": "7a68-093c-440f-b87c",
 				"children": [],
-				"image": "invalid_name.png",
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/ats/ui-editor/img/invalid_name.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=1.25&brandModel=iPhone%207?random=0.22187333509433427"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/ats/ui-editor/img/invalid_name.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.59&brandModel=iPhone%207"
 			}
 		},
 		{
@@ -977,6 +977,8 @@
 				"text": "Support",
 				"textColor": "rgba( 255, 255, 255, 1 )",
 				"marginLeft": 11,
+				"usePageVariable": true,
+				"marginRight": 11,
 				"flexProps": {
 					"flexGrow": 1,
 					"alignSelf": "STRETCH"
@@ -1000,6 +1002,8 @@
 				"borderWidth": 0,
 				"textColor": "rgba( 255, 255, 255, 1 )",
 				"textAlignment": "MIDLEFT",
+				"marginLeft": 11,
+				"usePageVariable": true,
 				"font": {
 					"size": 12,
 					"bold": false,
@@ -1011,10 +1015,10 @@
 					"positionType": "RELATIVE",
 					"flexGrow": 1
 				},
-				"name": "label1",
+				"name": "lblSupport",
 				"parent": "7a68-093c-440f-b87c",
 				"children": [],
-				"marginLeft": 11
+				"marginRight": 11
 			}
 		},
 		{
@@ -1045,6 +1049,7 @@
 				"alpha": 1,
 				"borderColor": "rgba(0,0,0,1)",
 				"borderWidth": 0,
+				"paddingLeft": null,
 				"flexProps": {
 					"alignSelf": "AUTO",
 					"direction": "INHERIT",
@@ -1060,8 +1065,7 @@
 				"parent": "1b28-3589-f90b-0650",
 				"children": [
 					"4c74-405f-a26f-6e68"
-				],
-				"paddingLeft": null
+				]
 			}
 		},
 		{
@@ -1078,6 +1082,7 @@
 				"marginLeft": null,
 				"textAlignment": "MIDRIGHT",
 				"marginRight": null,
+				"usePageVariable": true,
 				"flexProps": {
 					"flexGrow": 1,
 					"alignSelf": "STRETCH"
@@ -1101,6 +1106,9 @@
 				"borderWidth": 0,
 				"textColor": "rgba( 255, 255, 255, 1 )",
 				"textAlignment": "MIDRIGHT",
+				"marginLeft": null,
+				"marginRight": null,
+				"usePageVariable": true,
 				"font": {
 					"size": 12,
 					"bold": false,
@@ -1112,11 +1120,9 @@
 					"positionType": "RELATIVE",
 					"flexGrow": 1
 				},
-				"name": "label1",
+				"name": "lblSignup",
 				"parent": "01b7-5469-3238-0670",
-				"children": [],
-				"marginLeft": null,
-				"marginRight": null
+				"children": []
 			}
 		}
 	]
