@@ -81,7 +81,7 @@ function fetchData(orderNo) {
             page.data.results.push({
                 title: item.testName,
                 value: item.result,
-                color: (item.isHigh || item.isLow) ? "#EE0000" : "111111"
+                color: (item.isHigh || item.isLow) ? "#EE0000" : "#111111"
             });
             labResultsTextArray.push(`∙ ${item.resultDetails}`);
             if (!isNaN(item.result)) {

@@ -5,7 +5,7 @@
             "hashType": "md5",
             "profileKey": "Kzj1j1ed1b5nNTR4nLb8YawFy5gibsub",
             "revision": 1,
-            "channels": ["poc"],
+            "channels": ["test"],
             "meta": {
                 "whatIsWritten in data": "as data object in here",
                 "also": "it can be null or missing",

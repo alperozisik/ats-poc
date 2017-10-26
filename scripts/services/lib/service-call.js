@@ -108,7 +108,7 @@ function bodyParser(response) {
     }
 }
 
-function getContentType(headers) {
+function getContentType(headers = {}) {
     var contentType = headers["Content-Type"];
     if (!contentType) {
         let headers = Object.keys(headers);

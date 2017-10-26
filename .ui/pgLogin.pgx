@@ -46,12 +46,13 @@
 					"1aeb-caad-07d2-0fcc",
 					"47cc-07a1-2a45-c430",
 					"649e-655e-83e7-dcd8",
-					"f1a3-993a-cef2-d348"
+					"f1a3-993a-cef2-d348",
+					"b620-3d48-ccbe-6ff6"
 				],
 				"parent": null,
 				"name": "pgLogin",
-				"width": 198.75,
-				"height": 353.51
+				"width": 165,
+				"height": 293.48
 			}
 		},
 		{
@@ -247,7 +248,7 @@
 				"children": [],
 				"parent": "7430-e342-8c7c-2392",
 				"name": "imgLogo",
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/ats/ui-editor/img/ats_logo.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.53&brandModel=iPhone%207?random=0.0872272692773014"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/ats/ui-editor/img/ats_logo.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.44&brandModel=iPhone%207?random=0.060972636188066254"
 			}
 		},
 		{
@@ -938,11 +939,11 @@
 					"flexGrow": 1
 				},
 				"usePageVariable": true,
+				"left": 0,
+				"top": 0,
 				"children": [],
 				"parent": "649e-655e-83e7-dcd8",
-				"name": "btnLogin",
-				"left": 0,
-				"top": 0
+				"name": "btnLogin"
 			}
 		},
 		{
@@ -981,13 +982,65 @@
 				},
 				"minHeight": 21,
 				"minWidth": 21,
-				"name": "aiLogin",
-				"parent": "649e-655e-83e7-dcd8",
-				"children": [],
 				"usePageVariable": true,
 				"bottom": 14,
 				"top": 14,
-				"left": 20
+				"left": 20,
+				"name": "aiLogin",
+				"parent": "649e-655e-83e7-dcd8",
+				"children": []
+			}
+		},
+		{
+			"type": "Label",
+			"id": "b620-3d48-ccbe-6ff6",
+			"themeProps": {
+				"Sizes": "Default"
+			},
+			"userProps": {
+				"usePageVariable": true,
+				"width": null,
+				"height": null,
+				"textAlignment": "BOTTOMRIGHT",
+				"text": null,
+				"bottom": 3,
+				"right": 3,
+				"textColor": "rgba( 155, 155, 155, 1 )",
+				"backgroundColor": "rgba( 189, 16, 224, 0 )",
+				"flexProps": {
+					"positionType": "ABSOLUTE"
+				}
+			},
+			"className": ".label",
+			"props": {
+				"width": null,
+				"height": null,
+				"touchEnabled": true,
+				"text": null,
+				"visible": true,
+				"multiline": false,
+				"backgroundColor": "rgba( 189, 16, 224, 0 )",
+				"alpha": 1,
+				"borderColor": "rgba(0,0,0,1)",
+				"borderWidth": 0,
+				"textColor": "rgba( 155, 155, 155, 1 )",
+				"textAlignment": "BOTTOMRIGHT",
+				"font": {
+					"size": 16,
+					"bold": false,
+					"italic": false,
+					"family": "Arial"
+				},
+				"flexProps": {
+					"alignSelf": "AUTO",
+					"positionType": "ABSOLUTE"
+				},
+				"usePageVariable": true,
+				"bottom": 3,
+				"right": 3,
+				"name": "lblVersion",
+				"parent": "2252-0cc0-907a-043f",
+				"children": []
 			}
 		}
 	]

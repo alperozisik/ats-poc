@@ -3,7 +3,7 @@
 		"name": "ATS PoC",
 		"company": "Smartface User",
 		"webSite": "https://www.smartface.io",
-		"version": "1.1.5",
+		"version": "1.1.7",
 		"runtimeVersion": "1100",
 		"description": "This is Smartface's default empty project. You can click to Run on Device button to see it on your device."
 	},
@@ -84,7 +84,7 @@
 						"active": false
 					}
 				},
-				"playerPath": "players/Android/FixedPlayer.zip"
+				"playerPath": null
 			},
 			"keys": {
 				"project3DesKey": "1LINw7BuJLojnluxCUGrrDZ09yivCHqp",

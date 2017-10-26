@@ -54,16 +54,18 @@ function onShow(superOnShow, data = {}) {
     const page = this;
     global.pgFeed = page;
     global.SMF.i18n.bindLanguage("pgFeed", page);
-    page.feedData = {
-        page: 0,
-        items: [],
-        reachedToTheEnd: false
-    };
-    page.showDialog();
-    setTimeout(() => {
-        fetchData.call(page);
-    }, 450);
-    page.lvFeed.itemCount && page.lvFeed.scrollTo(0);
+    if (data.refreshFeed) {
+        page.feedData = {
+            page: 0,
+            items: [],
+            reachedToTheEnd: false
+        };
+        page.showDialog();
+        setTimeout(() => {
+            fetchData.call(page);
+        }, 450);
+        page.lvFeed.itemCount && page.lvFeed.scrollTo(0);
+    }
 
     if (!page.fab) {
         let fabItems = [
@@ -85,7 +87,7 @@ function onShow(superOnShow, data = {}) {
             color: mainColor
         };
         page.fab = new FloatingMenu(fabOptions);
-        
+
         page.layout.addChild(page.fab);
     }
     console.log(`patientId is = ${data.patientId}`);

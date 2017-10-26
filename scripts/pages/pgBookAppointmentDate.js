@@ -137,7 +137,9 @@ function onLoad(superOnLoad) {
         ).then(result => {
 
             waitDialog.hide();
-            Router.goBack("pgFeed");
+            Router.goBack("pgFeed", {
+                refreshFeed: true
+            });
         }).catch(err => {
             waitDialog.hide();
             if (err.message)

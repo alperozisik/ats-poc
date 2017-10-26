@@ -6,16 +6,17 @@ const Router = require('sf-core/router');
 const rau = require("sf-extension-utils").rau;
 const userService = require("../services/user");
 const appData = require("../lib/appData");
-const lng = Device.language;
+const lng = global.Device.language;
+const Application = require("sf-core/application");
 
 const PgLogin = extend(PgLoginDesign)(
     function(_super) {
         _super(this);
         this.onShow = onShow.bind(this, this.onShow.bind(this));
         this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
-        
+
         if (lng === "ar") {
-            
+
         }
     });
 
@@ -34,6 +35,8 @@ function onShow(superOnShow, data = {}) {
             userNameTextBox: page.userNameInput,
             passwordTextBox: page.passwordInput,
             autoLogin: true,
+            autoEvents: true,
+            button: page.btnLogin,
             callback: fingerprintCallback.bind(page)
         });
         rau.checkUpdate({
@@ -59,10 +62,10 @@ function onLoad(superOnLoad) {
         this.userNameInput.text = "smartface";
         this.passwordInput.text = "123456";
     };
+    this.userNameLbl.touchEnabled = false;
+    this.passwordLbl.touchEnabled = false;
 
-    this.btnLogin.onPress = () => {
-        fingerprint.loginWithFingerprint();
-    };
+    this.lblVersion.text = `v${Application.version}`;
 }
 
 
@@ -80,11 +83,13 @@ function fingerprintCallback(err, fingerprintResult) {
     loginWithUserNameAndPassword(page.userNameInput.text, password, function(err, patientId) {
         page.aiLogin.visible = false;
         page.btnLogin.enabled = true;
-        if (err)
+        if (err) {
             return alert(global.lang.cannotLogin);
+        }
         fingerprintResult && fingerprintResult.success(); //Important!
         Router.go('pgFeed', {
-            patientId
+            patientId,
+            refreshFeed: true
         });
     });
 }

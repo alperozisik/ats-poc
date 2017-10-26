@@ -28,7 +28,7 @@ Application.onReceivedNotification = function(e) {
 };
 
 
-
+/*
 Router.add("pgLogin", require("./pages/pgLogin"), true);
 Router.add("pgFeed", require("./pages/pgFeed"), true);
 Router.add("pgDoctorAppointment", require("./pages/pgDoctorAppointment"));
@@ -46,3 +46,8 @@ Router.go("pgCalendar", {
 });
 
 /**/
+
+Router.add("pgLogin2", require("./pages/pgLogin2"), true);
+Router.go("pgLogin2", {
+    appStart: true
+});

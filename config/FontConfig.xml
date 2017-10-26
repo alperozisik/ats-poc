@@ -2,4 +2,6 @@
   <Font Name="Times New Roman" iOSPublish="Y" AndroidPublish="Y"/>
   <Font Name="Verdana" iOSPublish="Y" AndroidPublish="Y"/>
   <Font Name="Arial" iOSPublish="Y" AndroidPublish="Y"/>
-  <Font Name="FontAwesome" iOSPublish="Y" AndroidPublish="Y"/><Font Name="Nunito" iOSPublish="Y" AndroidPublish="Y"/></Fonts>
+  <Font Name="FontAwesome" iOSPublish="Y" AndroidPublish="Y"/><Font Name="Nunito" iOSPublish="Y" AndroidPublish="Y"/>
+  <Font Name="SF Pro Display" iOSPublish="Y" AndroidPublish="Y"/>
+</Fonts>
