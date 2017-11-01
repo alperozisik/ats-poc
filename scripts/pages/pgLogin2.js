@@ -3,6 +3,7 @@ const PgLogin2Design = require('ui/ui_pgLogin2');
 const Color = require('sf-core/ui/color');
 const FlexLayout = require('sf-core/ui/flexlayout');
 const TextAlignment = require('sf-core/ui/textalignment');
+const Router = require("sf-core/ui/router");
 var usingLtr = true;
 
 const PgLogin2 = extend(PgLogin2Design)(
@@ -62,8 +63,8 @@ function onLoad(superOnLoad) {
             page.lblArabic.text = "English";
         }
         else {
-            page.layout.direction = FlexLayout.Direction.LTL;
-            setLtl(page);
+            page.layout.direction = FlexLayout.Direction.LTR;
+            setLtr(page);
             page.lblArabic.right = page.lblArabic.left;
             page.lblArabic.left = NaN;
             page.tbUserName.textAlignment = TextAlignment.MIDLEFT;
@@ -74,6 +75,10 @@ function onLoad(superOnLoad) {
         }
         usingLtr = !usingLtr;
         page.layout.applyLayout();
+    };
+    
+    page.btnLogin.onPress = function() {
+      Router.go("pgAppointments2");  
     };
 
 }
@@ -90,14 +95,14 @@ function setRtl(component) {
     }
 }
 
-function setLtl(component) {
+function setLtr(component) {
     if (!component.direction)
         return;
     component.direction = FlexLayout.Direction.LTR;
 
     if (component.children) {
         for (var i in component.children) {
-            setLtl(component.children[i]);
+            setLtr(component.children[i]);
         }
     }
 }

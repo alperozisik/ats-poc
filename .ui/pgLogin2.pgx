@@ -10,16 +10,17 @@
 			"userProps": {
 				"backgroundColor": "rgba( 53, 101, 147, 1 )",
 				"paddingTop": 47,
+				"orientation": "AUTO",
 				"flexProps": {
 					"justifyContent": "SPACE_BETWEEN",
 					"alignItems": "CENTER"
 				}
 			},
 			"className": ".page",
-			"version": "6.4.6",
+			"version": "6.5.2",
 			"props": {
 				"backgroundColor": "rgba( 53, 101, 147, 1 )",
-				"orientation": "PORTRAIT",
+				"orientation": "AUTO",
 				"paddingTop": 47,
 				"flexProps": {
 					"alignContent": "STRETCH",
@@ -39,8 +40,8 @@
 					"1b28-3589-f90b-0650",
 					"cf88-2021-6913-8d53"
 				],
-				"width": 221.25,
-				"height": 393.53
+				"width": 311.25,
+				"height": 553.61
 			}
 		},
 		{
@@ -54,7 +55,7 @@
 			},
 			"className": ".statusBar",
 			"props": {
-				"color": "#104682",
+				"color": "#3D7396",
 				"visible": true,
 				"style": "LIGHTCONTENT",
 				"name": "statusBar",
@@ -156,7 +157,7 @@
 				"name": "imgLogo",
 				"parent": "03f4-9994-a399-f257",
 				"children": [],
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/ats/ui-editor/img/combined_shape.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.59&brandModel=iPhone%207"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/ats/ui-editor/img/combined_shape.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.83&brandModel=iPhone%207"
 			}
 		},
 		{
@@ -453,7 +454,7 @@
 				"name": "imgUser",
 				"parent": "5717-e19d-1c7f-ec6c",
 				"children": [],
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/ats/ui-editor/img/name.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.59&brandModel=iPhone%207"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/ats/ui-editor/img/name.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.83&brandModel=iPhone%207"
 			}
 		},
 		{
@@ -633,7 +634,7 @@
 				"name": "imgPassword",
 				"parent": "9af3-8719-750d-9d1a",
 				"children": [],
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/ats/ui-editor/img/password.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.59&brandModel=iPhone%207"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/ats/ui-editor/img/password.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.83&brandModel=iPhone%207"
 			}
 		},
 		{
@@ -801,7 +802,7 @@
 				"height": 20,
 				"right": 15,
 				"top": 25,
-				"left": 311.206640625,
+				"left": null,
 				"flexProps": {
 					"positionType": "ABSOLUTE"
 				}
@@ -823,7 +824,7 @@
 				"usePageVariable": true,
 				"right": 15,
 				"top": 25,
-				"left": 311.206640625,
+				"left": null,
 				"font": {
 					"size": 16,
 					"bold": false,
@@ -962,7 +963,7 @@
 				"name": "imageView1",
 				"parent": "7a68-093c-440f-b87c",
 				"children": [],
-				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/ats/ui-editor/img/invalid_name.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.59&brandModel=iPhone%207"
+				"imageURL": "https://dispatcher.r0.smartface.io/smartface9/ats/ui-editor/img/invalid_name.png?os=iOS&osVersion=10.2&density=326&densityRatio=0.5&zoomLevel=0.83&brandModel=iPhone%207"
 			}
 		},
 		{
@@ -1004,6 +1005,7 @@
 				"textAlignment": "MIDLEFT",
 				"marginLeft": 11,
 				"usePageVariable": true,
+				"marginRight": 11,
 				"font": {
 					"size": 12,
 					"bold": false,
@@ -1017,8 +1019,7 @@
 				},
 				"name": "lblSupport",
 				"parent": "7a68-093c-440f-b87c",
-				"children": [],
-				"marginRight": 11
+				"children": []
 			}
 		},
 		{

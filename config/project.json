@@ -92,6 +92,7 @@
 			}
 		},
 		"output": {
+			
 			"ios": {
 				"outputFolder": "output/iOS",
 				"bundleIdentifier": "io.smartface.fibabanka"
