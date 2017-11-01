@@ -7,8 +7,8 @@ const mcs = require("../../lib/mcs");
 var lang =  Device.language;//System.language.subStr(0, 2);
 lang = lang === "ar" ? "ar" : "en";
 const commonHeaders = {
-    "Content-Type": "application/json; charset=utf-8",
-    "Accept": "application/json; charset=utf-8",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
     "language": lang
 };
 const methodsWithoutBody = ["GET", "HEAD"];
@@ -95,6 +95,7 @@ function bodyParser(response) {
         case !contentType.startsWith("image"):
             response.body = response.body.toString();
             console.log(`body = ${response.body}`);
+            response.body = response.body || "{}";
         case contentType === "application/json":
             response.body = JSON.parse(response.body);
             break;
